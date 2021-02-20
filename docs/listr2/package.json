@@ -1,0 +1,30 @@
+{
+  "name": "nuxt-content-docs",
+  "version": "1.6.0",
+  "description": "Docs for @nuxt/content",
+  "author": "NuxtJS",
+  "private": true,
+  "scripts": {
+    "start": "nuxt start",
+    "dev:start": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./",
+    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx,vue}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
+  },
+  "dependencies": {
+    "@cenk1cenk2/nuxt-content-theme-docs": "*",
+    "nuxt": "^2.14.12",
+    "nuxt-ackee": "^2.0.0",
+    "vue-multiselect": "^2.1.6"
+  }
+}

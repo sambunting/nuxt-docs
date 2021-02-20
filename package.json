@@ -1,0 +1,50 @@
+{
+  "name": "@cenk1cenk2/docs",
+  "private": true,
+  "root": true,
+  "description": "nuxt.js content based documentation.",
+  "repository": "https://github.com/cenk1cenk2/docs",
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://srcs.kilic.dev"
+  },
+  "workspaces": [
+    "docs/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "ls": "lerna la",
+    "clean": "lerna clean -y && rimraf node_modules yarn.lock",
+    "exec": "lerna exec --stream",
+    "command": "lerna run --stream"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn command lint:staged --concurrency 1",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@cenk1cenk2/cz-cc": "^1.3.2",
+    "@cenk1cenk2/eslint-config": "^0.4.33",
+    "@nuxt/typescript-build": "^2.0.4",
+    "@nuxt/typescript-runtime": "^2.0.1",
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.3",
+    "eslint": "^7.19.0",
+    "husky": "^5.0.9",
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@cenk1cenk2/cz-cc"
+    }
+  }
+}

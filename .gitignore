@@ -1,0 +1,12 @@
+node_modules
+!node_modules/@cenk1cenk2
+*.iml
+.idea
+*.log*
+.nuxt*
+.vscode
+.DS_Store
+coverage
+dist
+sw.*
+.env
