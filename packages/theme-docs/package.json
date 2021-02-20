@@ -1,14 +1,35 @@
 {
   "name": "@cenk1cenk2/nuxt-content-theme-docs",
-  "private": true,
   "version": "1.0.0",
-  "repository": "nuxt/content",
   "main": "src/",
   "types": "./src/index.d.ts",
+  "description": "Fork of @nuxt/content-theme-docs for my own taste.",
+  "keywords": [
+    "nuxt",
+    "nuxt-content",
+    "vue"
+  ],
   "license": "MIT",
+  "repository": "https://github.com/cenk1cenk2/nuxt-docs",
+  "author": {
+    "name": "Cenk Kilic",
+    "url": "https://cenk.kilic.dev",
+    "email": "cenk@kilic.dev"
+  },
   "scripts": {
-    "lint": "eslint --ext .ts,.js,.tsx,.jsx,vue --fix ./",
-    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./"
+    "lint": "prettier ./ --loglevel warn --write && eslint --ext .ts,.js,.tsx,.jsx,vue --fix ./",
+    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
+    "lint:staged": "lint-staged",
+    "docs:toc": "markdown-toc README.md --bullets='-' -i"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx,vue}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
   },
   "files": [
     "src"

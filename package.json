@@ -17,7 +17,8 @@
     "ls": "lerna la",
     "clean": "lerna clean -y && rimraf node_modules yarn.lock",
     "exec": "lerna exec --stream",
-    "command": "lerna run --stream"
+    "command": "lerna run --stream",
+    "docs:toc": "markdown-toc README.md --bullets='-' -i && yarn command --no-bail docs:toc"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,9 @@
     "eslint": "^7.19.0",
     "husky": "^5.0.9",
     "lerna": "^3.22.1",
+    "markdown-toc": "^1.2.0",
+    "markdownlint": "^0.23.1",
+    "markdownlint-cli": "^0.26.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2"
   },

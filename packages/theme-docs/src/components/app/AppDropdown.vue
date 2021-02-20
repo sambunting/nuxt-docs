@@ -1,11 +1,5 @@
 <template>
-  <div
-    v-click-away="'close'"
-    class="relative inline-block text-left"
-    @mouseenter="open = true"
-    @mouseleave="open = false"
-    @keydown.escape="open = false"
-  >
+  <div v-click-away="'close'" class="relative inline-block text-left" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape="open = false">
     <slot name="trigger" :toggle="toggle" :open="open" />
 
     <transition
@@ -16,10 +10,7 @@
       leave-active-class="transition ease-in duration-75"
       leave-to-class="transform opacity-0 scale-95"
     >
-      <div
-        v-show="open"
-        class="mt-2 w-auto rounded-md shadow-lg z-50 origin-top-right absolute bottom-0 right-0"
-      >
+      <div v-show="open" class="mt-2 w-auto rounded-md shadow-lg z-50 origin-top-right absolute bottom-0 right-0">
         <div class="rounded-md bg-white dark:bg-gray-800 shadow-xs">
           <slot />
         </div>

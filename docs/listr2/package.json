@@ -1,16 +1,23 @@
 {
-  "name": "nuxt-content-docs",
-  "version": "1.6.0",
-  "description": "Docs for @nuxt/content",
-  "author": "NuxtJS",
+  "name": "@cenk1cenk2-docs/listr2",
+  "version": "1.0.0",
   "private": true,
+  "description": "Docs for listr2",
+  "license": "MIT",
+  "repository": "https://github.com/cenk1cenk2/nuxt-docs",
+  "author": {
+    "name": "Cenk Kilic",
+    "url": "https://cenk.kilic.dev",
+    "email": "cenk@kilic.dev"
+  },
   "scripts": {
     "start": "nuxt start",
     "dev:start": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./",
-    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./"
+    "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./ && markdownlint **/*.md --ignore node_modules --fix",
+    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
+    "lint:staged": "lint-staged"
   },
   "lint-staged": {
     "./*.{ts,js,tsx,jsx,vue}": [
@@ -18,7 +25,8 @@
       "eslint --fix"
     ],
     "./*.{json,md}": [
-      "prettier --loglevel warn --write"
+      "prettier --loglevel warn --write",
+      "markdownlint **/*.md --ignore node_modules"
     ]
   },
   "dependencies": {

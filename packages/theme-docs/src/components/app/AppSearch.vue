@@ -37,7 +37,7 @@
           @click="focus = false"
         >
           <span v-if="result.category" class="font-bold">{{ result.category }}</span>
-          <IconChevronRight v-if="result.category" class="w-3 h-3 mx-1" />
+          <FontAwesomeIcon v-if="result.category" :icon="fa.faChevronRight" class="w-3 h-3 mx-1" />
           {{ result.title }}
         </NuxtLink>
       </li>
@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
 export default {
   data () {
     return {
@@ -55,6 +57,11 @@ export default {
       open: false,
       searching: false,
       results: []
+    }
+  },
+  computed: {
+    fa () {
+      return { faChevronRight }
     }
   },
   watch: {

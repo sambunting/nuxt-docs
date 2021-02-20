@@ -14,11 +14,12 @@
 .nuxt-content {
   @apply break-words;
 
-  & h2, & h3 {
+  & h2,
+  & h3 {
     /* Fix anchor scrollTo */
     &::before {
       display: block;
-      content: " ";
+      content: ' ';
       margin-top: -85px;
       height: 85px;
       visibility: hidden;
@@ -30,7 +31,7 @@
       @apply ml-5;
 
       &::before {
-        content: "#";
+        content: '#';
         @apply text-primary-500 font-normal text-xl leading-8 -ml-5 pr-2 absolute opacity-100;
       }
 
@@ -58,7 +59,7 @@
     }
 
     /* Add top padding to code blocks with filename */
-    & > .filename + pre[class*="language-"] {
+    & > .filename + pre[class*='language-'] {
       @apply pt-8;
     }
 
@@ -82,7 +83,7 @@
   }
 
   /* Force style on pre elements */
-  & pre[class*="language-"] {
+  & pre[class*='language-'] {
     /* Make pre static so the relative goes to the parent (.nuxt-content-highlight) */
     @apply bg-gray-800 static;
   }

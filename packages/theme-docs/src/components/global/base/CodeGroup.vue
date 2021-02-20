@@ -1,8 +1,6 @@
 <template>
   <div class="code-group">
-    <div
-      class="rounded-t-md border-b-2 border-gray-700 px-2 bg-gray-800 text-sm text-white relative"
-    >
+    <div class="rounded-t-md border-b-2 border-gray-700 px-2 bg-gray-800 text-sm text-white relative">
       <button
         v-for="({ label }, i) in tabs"
         ref="tabs"
@@ -10,7 +8,9 @@
         class="px-4 py-3 text-gray-400 font-bold font-mono"
         :class="[activeTabIndex === i && 'active']"
         @click="updateTabs(i)"
-      >{{ label }}</button>
+      >
+        {{ label }}
+      </button>
       <span ref="highlight-underline" class="highlight-underline" />
     </div>
     <slot />
@@ -31,12 +31,14 @@ export default {
     }
   },
   mounted () {
-    this.tabs = this.$slots.default.filter(slot => Boolean(slot.componentOptions)).map((slot) => {
-      return {
-        label: slot.componentOptions.propsData.label,
-        elm: slot.elm
-      }
-    })
+    this.tabs = this.$slots.default
+      .filter(slot => Boolean(slot.componentOptions))
+      .map((slot) => {
+        return {
+          label: slot.componentOptions.propsData.label,
+          elm: slot.elm
+        }
+      })
     this.$nextTick(this.updateHighlighteUnderlinePosition)
   },
   methods: {
@@ -76,7 +78,7 @@ button {
 }
 
 .code-group ::v-deep {
-  & pre[class*="language-"] {
+  & pre[class*='language-'] {
     @apply rounded-t-none mt-0;
   }
 }

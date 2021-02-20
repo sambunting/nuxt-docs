@@ -13,7 +13,7 @@ export default {
       default: () => []
     }
   },
-  data() {
+  data () {
     return {
       value: null
     }

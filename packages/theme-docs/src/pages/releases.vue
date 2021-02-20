@@ -17,9 +17,7 @@
         <div v-for="release of releases" :key="release.name">
           <h2 :id="release.name" class="flex items-center justify-between">
             {{ release.name }}
-            <span
-              class="text-base font-normal text-gray-500"
-            >{{ formatDate(release) }}</span>
+            <span class="text-base font-normal text-gray-500">{{ formatDate(release) }}</span>
           </h2>
 
           <div class="nuxt-content" v-html="release.body" />
@@ -44,15 +42,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'settings'
-    ]),
+    ...mapGetters([ 'settings' ]),
     releases () {
       return this.$store.state.releases
     },
     toc () {
       return this.releases.map(release => ({
-        id: release.name, depth: 2, text: release.name
+        id: release.name,
+        depth: 2,
+        text: release.name
       }))
     }
   },

@@ -1,0 +1,86 @@
+kind: pipeline
+name: default
+
+trigger:
+  branch:
+    - master
+    - alpha
+    - beta
+    - rc
+  event:
+    - push
+
+steps:
+  - name: install
+    image: node:current-alpine
+    commands:
+      - yarn --frozen-lockfile
+
+  - name: lint
+    image: node:current-alpine
+    depends_on:
+      - install
+    commands:
+      - yarn command lint:check --concurrency 1
+
+  - name: docs
+    image: node:current-alpine
+    depends_on:
+      - install
+    commands:
+      - yarn docs:toc
+
+  - name: semantic-release
+    image: cenk1cenk2/drone-semantic-release
+    depends_on:
+      - lint
+    settings:
+      git_method: gh
+      add_modules:
+        - '@qiwi/multi-semantic-release'
+      override: multi-semantic-release
+      git_user_email:
+        from_secret: github_username
+      github_token:
+        from_secret: github_token
+      npm_token:
+        from_secret: npm_token
+    when:
+      branch:
+        - master
+        - beta
+      event:
+        - push
+
+  - name: build
+    image: node:current-alpine
+    depends_on:
+      - semantic-release
+    commands:
+      - yarn command build
+      - yarn command generate
+
+  - name: publish-docs-listr2
+    image: plugins/docker
+    working_dir: /drone/src/docs/listr2
+    depends_on:
+      - build
+    commands:
+      - cp Dockerfile ./docs/listr2
+    settings:
+      registry: docker.kilic.dev
+      repo: docker.kilic.dev/${DRONE_REPO_NAME,,}
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tag:
+        - latest
+    when:
+      event:
+        - push
+      branch:
+        - master
+
+image_pull_secrets:
+  - dockerconfigjson

@@ -1,4 +1,3 @@
-
 <template>
   <a
     v-if="settings.npm"
