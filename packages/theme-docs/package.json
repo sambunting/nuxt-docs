@@ -1,6 +1,9 @@
 {
   "name": "@cenk1cenk2/nuxt-content-theme-docs",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "src/",
   "types": "./src/index.d.ts",
   "description": "Fork of @nuxt/content-theme-docs for my own taste.",
