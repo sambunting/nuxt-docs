@@ -19,6 +19,7 @@
         </a>
       </div>
     </div>
+    <div class="block lg:hidden" style="padding-block: 40px"></div>
   </footer>
 </template>
 
