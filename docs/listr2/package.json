@@ -17,7 +17,8 @@
     "generate": "nuxt generate",
     "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./ && markdownlint **/*.md --ignore node_modules --fix",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "copy:dockerfile": "cp ../../Dockerfile ./"
   },
   "lint-staged": {
     "./*.{ts,js,tsx,jsx,vue}": [

@@ -59,6 +59,7 @@ steps:
     commands:
       - yarn command build
       - yarn command generate
+      - yarn command copy:dockerfile
 
   - name: publish-docs-listr2
     image: plugins/docker
