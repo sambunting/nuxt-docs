@@ -67,7 +67,7 @@ steps:
       endpoint: https://s3.kilic.dev
       bucket: drone-cache
       region: eu-1
-      cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
+      cache_key: '{{ .Commit.Branch }}'
       mount:
         - 'docs/listr2/.nuxt'
         - 'docs/listr2/dist'
@@ -96,7 +96,7 @@ steps:
       endpoint: https://s3.kilic.dev
       bucket: drone-cache
       region: eu-1
-      cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
+      cache_key: '{{ .Commit.Branch }}'
       mount:
         - 'docs/listr2/.nuxt'
         - 'docs/listr2/dist'
