@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [1.0.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.2...@cenk1cenk2/nuxt-content-theme-docs@1.0.3) (2021-02-21)
+
+
+### Bug Fixes
+
+* add all documentation, fix some bugs in template ([14e2f67](https://github.com/cenk1cenk2/nuxt-docs/commit/14e2f67b42a58312bf4af11be9437837e176cf18))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [1.0.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.1...@cenk1cenk2/nuxt-content-theme-docs@1.0.2) (2021-02-21)
 
 
