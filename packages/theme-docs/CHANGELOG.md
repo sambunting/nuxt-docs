@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [1.0.4](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.3...@cenk1cenk2/nuxt-content-theme-docs@1.0.4) (2021-02-21)
+
+
+### Bug Fixes
+
+* update css for scroll bar ([1d8081c](https://github.com/cenk1cenk2/nuxt-docs/commit/1d8081c25419423db935affd7c66e8f29457fe7b))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [1.0.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.2...@cenk1cenk2/nuxt-content-theme-docs@1.0.3) (2021-02-21)
 
 
