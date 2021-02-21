@@ -66,10 +66,10 @@ steps:
     depends_on:
       - build
     commands:
-      - cp Dockerfile ./docs/listr2
+      - cp /drone/src/Dockerfile /drone/src/docs/listr2/
     settings:
       registry: docker.kilic.dev
-      repo: docker.kilic.dev/${DRONE_REPO_NAME,,}
+      repo: docker.kilic.dev/html-docs-listr2
       username:
         from_secret: docker_username
       password:
