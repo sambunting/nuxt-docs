@@ -15,19 +15,27 @@
           name="kilic.dev"
           class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark-hover:text-primary-500 ml-4"
         >
-          <span class="text-xl">kilic.dev</span>
+          <span class="rounded-lg bg-gray-200 dark:bg-gray-800 p-1">
+            <FontAwesomeIcon :icon="fa.faTerminal" class="text-primary-500 text-lg pt-1" />
+          </span>
+          <span class="text-xl ml-1/2">kilic.dev</span>
         </a>
       </div>
     </div>
-    <div class="block lg:hidden" style="padding-block: 40px"></div>
+    <div class="block" style="padding-block: 40px"></div>
   </footer>
 </template>
 
 <script>
+import { faTerminal } from '@fortawesome/free-solid-svg-icons'
+
 export default {
   computed: {
     availableLocales () {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    },
+    fa () {
+      return { faTerminal }
     }
   }
 }

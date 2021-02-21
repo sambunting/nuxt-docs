@@ -3,5 +3,10 @@
   "url": "https://listr2.kilic.dev",
   "github": "cenk1cenk2/listr2",
   "npm": "listr2",
-  "defaultBranch": "master"
+  "defaultBranch": "master",
+  "githubDocs": {
+    "repo": "cenk1cenk2/nuxt-docs",
+    "branch": "master",
+    "prefix": "docs/listr2"
+  }
 }

@@ -9,7 +9,7 @@
         }"
       >
         <div class="flex justify-between self-center">
-          <p class="mb-3 lg:mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold text-md lg:text-md">{{ $t('toc.title') }}</p>
+          <p class="mb-3 lg:mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold">{{ $t('toc.title') }}</p>
           <span class="lg:hidden text-xl mr-2" aria-label="Toggle table of contents for this page." @click.stop="tocToggle = !tocToggle">
             <FontAwesomeIcon
               v-if="tocToggle"
@@ -37,7 +37,7 @@
             >
               <a
                 :href="`#${link.id}`"
-                class="block text-md scrollactive-item transition-padding ease-in-out duration-300 hover:pl-1"
+                class="block scrollactive-item transition-padding ease-in-out duration-300 hover:pl-1"
                 :class="{
                   'py-2': link.depth === 2,
                   'ml-2 pb-2': link.depth === 3,

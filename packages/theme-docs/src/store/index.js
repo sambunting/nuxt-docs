@@ -19,27 +19,51 @@ export const getters = {
     return state.settings
   },
   githubUrls (state) {
-    const { github = '', githubApi = '' } = state.settings
+    const { github, githubApi, githubDocs } = state.settings
+
+    let parsed
 
     // GitHub Enterprise
     if (github.startsWith('http') && githubApi.startsWith('http')) {
-      return {
+      parsed = {
         repo: github,
         api: {
           repo: githubApi,
           releases: `${githubApi}/releases`
         }
       }
-    }
-
-    // GitHub
-    return {
-      repo: `https://github.com/${github}`,
-      api: {
-        repo: `https://api.github.com/repos/${github}`,
-        releases: `https://api.github.com/repos/${github}/releases`
+    } else {
+      // GitHub
+      parsed = {
+        repo: `https://github.com/${github}`,
+        api: {
+          repo: `https://api.github.com/repos/${github}`,
+          releases: `https://api.github.com/repos/${github}/releases`
+        }
       }
     }
+
+    if (githubDocs?.repo?.startsWith('http')) {
+      parsed = {
+        ...parsed,
+        docs: {
+          repo: githubDocs.repo,
+          branch: githubDocs.branch,
+          prefix: githubDocs.prefix
+        }
+      }
+    } else {
+      parsed = {
+        ...parsed,
+        docs: {
+          repo: `https://github.com/${githubDocs.repo}`,
+          branch: githubDocs.branch,
+          prefix: githubDocs.prefix
+        }
+      }
+    }
+
+    return parsed
   },
   npmUrls (state) {
     const { npm } = state.settings

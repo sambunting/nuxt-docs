@@ -34,19 +34,23 @@
       </div>
     </div>
 
-    <!-- Menu button on smaller screens -->
-    <div class="lg:hidden fixed z-50 bottom-4 right-4">
-      <button v-if="settings.layout !== 'single'" class="rounded-full w-16 h-16 focus:outline-none bg-gray-600 text-white" aria-label="Menu" @click.stop="menu = !menu">
-        <FontAwesomeIcon v-if="menu" :icon="fa.faTimes" class="text-3xl inline-block self-center hover:text-primary-500 pt-1" />
-        <FontAwesomeIcon v-else :icon="fa.faBars" class="text-3xl inline-block self-center hover:text-primary-500 pt-1" />
-      </button>
-    </div>
-
-    <!-- Go to top button -->
-    <div v-if="scrolled" class="fixed z-50 bottom-4 left-4 lg:right-4">
-      <button v-if="settings.layout !== 'single'" class="rounded-full w-16 h-16 focus:outline-none bg-gray-600 text-white" aria-label="Go to top." @click="scrollToTop()">
-        <FontAwesomeIcon :icon="fa.faChevronUp" class="text-3xl inline-block self-center hover:text-primary-500" />
-      </button>
+    <div class="fixed z-50 bottom-4 right-4">
+      <div class="flex flex-end space-x-4">
+        <!-- Menu button on smaller screens -->
+        <button
+          v-if="settings.layout !== 'single' && scrolled"
+          class="rounded-full w-16 h-16 focus:outline-none bg-gray-600 text-white"
+          aria-label="Go to top."
+          @click="scrollToTop()"
+        >
+          <FontAwesomeIcon :icon="fa.faChevronUp" class="text-3xl inline-block self-center hover:text-primary-500" />
+        </button>
+        <!-- Go to top button -->
+        <button v-if="settings.layout !== 'single'" class="lg:hidden rounded-full w-16 h-16 focus:outline-none bg-gray-600 text-white" aria-label="Menu" @click.stop="menu = !menu">
+          <FontAwesomeIcon v-if="menu" :icon="fa.faTimes" class="text-3xl inline-block self-center hover:text-primary-500 pt-1" />
+          <FontAwesomeIcon v-else :icon="fa.faBars" class="text-3xl inline-block self-center hover:text-primary-500 pt-1" />
+        </button>
+      </div>
     </div>
   </nav>
 </template>

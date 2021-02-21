@@ -31,7 +31,7 @@ export const defaultConfig = docsOptions => ({
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
+        theme: 'prism-theme-one-dark/prism-onedark.css'
       }
     }
   },

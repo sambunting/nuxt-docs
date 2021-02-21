@@ -17,13 +17,13 @@
             'lg:mb-0': index === Object.keys(categories).length - 1
           }"
         >
-          <p v-if="category" class="mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold text-md">{{ category }}</p>
+          <p v-if="category" class="mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold">{{ category }}</p>
           <ul>
             <li v-for="doc of docs" :key="doc.slug" class="text-gray-700 dark:text-gray-300">
               <NuxtLink
                 :to="localePath(doc.to)"
                 class="px-2 rounded font-medium py-1 hover:text-primary-500 flex items-center justify-between"
-                exact-active-class="text-primary-500 bg-primary-100 hover:text-primary-500 dark:bg-primary-900"
+                exact-active-class="text-primary-500 bg-gray-200 hover:text-primary-500 dark:bg-gray-800"
               >
                 {{ doc.menuTitle || doc.title }}
                 <client-only>
@@ -34,10 +34,11 @@
           </ul>
         </li>
         <li class="lg:hidden space-x-2">
-          <p class="mb-2 text-gray-500 uppercase tracking-wider font-bold text-sm lg:text-xs">More</p>
+          <p class="mb-2 text-gray-500 uppercase tracking-wider font-bold">More</p>
           <AppIcons />
         </li>
       </ul>
+      <div class="block lg:hidden" style="padding-block: 40px"></div>
     </div>
   </aside>
 </template>

@@ -11,8 +11,17 @@
   display: block;
 }
 
+body {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: blue orange; /* scroll thumb and track */
+}
+
 .nuxt-content {
   @apply break-words;
+
+  img {
+    display: inline-block !important;
+  }
 
   & h2,
   & h3 {
@@ -86,5 +95,6 @@
   & pre[class*='language-'] {
     /* Make pre static so the relative goes to the parent (.nuxt-content-highlight) */
     @apply bg-gray-800 static;
+    @apply text-base;
   }
 }

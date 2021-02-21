@@ -1,17 +1,25 @@
 ---
-title: Introduction
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+title: listr2
+description: 'Create beautiful CLI interfaces via easy and logical to implement task lists that feel alive and interactive.'
 position: 1
-category: Getting started
+fullscreen: true
 features:
-  - Blazing fast hot reload in development
-  - Vue components in Markdown
-  - Full-text search
-  - Support static site generation with `nuxt generate`
-  - Powerful QueryBuilder API (MongoDB like)
-  - Syntax highlighting to code blocks in markdown files using PrismJS.
-  - Table of contents generation
-  - Handles Markdown, CSV, YAML, JSON(5), XML
-  - Extend with custom parsers
-  - Extend with hooks
+  - Beautiful
+  - Fast
+  - Customizable
+  - Functional
 ---
+
+[![Build Status](https://drone.kilic.dev/api/badges/cenk1cenk2/listr2/status.svg)](https://drone.kilic.dev/cenk1cenk2/listr2) [![Version](https://img.shields.io/npm/v/listr2.svg)](https://npmjs.org/package/listr2) [![Downloads/week](https://img.shields.io/npm/dw/listr2.svg)](https://npmjs.org/package/listr2) [![codecov](https://codecov.io/gh/cenk1cenk2/listr2/branch/master/graph/badge.svg)](https://codecov.io/gh/cenk1cenk2/listr2) [![Dependencies](https://img.shields.io/librariesio/release/npm/listr2)](https://npmjs.org/package/listr2) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+**Create beautiful CLI interfaces via easy and logical to implement task lists that feel alive and interactive.**
+
+This is the expanded and re-written in Typescript version of the beautiful plugin by [Sam Verschueren](https://github.com/SamVerschueren) called [Listr](https://github.com/SamVerschueren/listr).
+
+<div class="object-fill">
+
+![Demo](https://raw.githubusercontent.com/cenk1cenk2/listr2/master/demo/demo.gif)
+
+</div>
+
+<list :items="features"></list>

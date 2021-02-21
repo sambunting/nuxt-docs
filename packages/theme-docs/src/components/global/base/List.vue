@@ -2,7 +2,7 @@
   <div>
     <div v-for="(item, i) in items" :key="i" class="mt-3 flex">
       <span :class="`list-${type}`" class="mt-px mr-3 flex-shrink-0">
-        <FontAwesomeIcon :icon="iconName" class="h-6 w-6" />
+        <FontAwesomeIcon :v-if="type !== 'primary'" :icon="iconName" class="h-6 w-6" />
       </span>
       {{ item }}
     </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle, faCheckDouble } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   props: {
@@ -35,7 +35,7 @@ export default {
       return (
         this.icon ||
         {
-          primary: 'IconBadgeCheck',
+          primary: faCheckDouble,
           success: faCheckCircle,
           info: faInfoCircle,
           warning: faExclamationCircle,

@@ -42,7 +42,8 @@ module.exports = ({ nuxt }) => ({
       default: {
         css: {
           a: {
-            color: theme('colors.primary.500')
+            color: theme('colors.primary.500'),
+            'text-decoration': 'none'
           },
           h2: {
             paddingBottom: theme('padding.2'),
@@ -88,6 +89,11 @@ module.exports = ({ nuxt }) => ({
           },
           'a code': {
             color: theme('colors.primary.500')
+          },
+          img: {
+            display: 'inline-block',
+            'margin-bottom': '0.25em',
+            'margin-top': '0.25em'
           }
         }
       },

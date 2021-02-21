@@ -25,7 +25,13 @@ export default {
         return
       }
 
-      return [ this.githubUrls.repo, 'edit', this.settings.defaultBranch, this.settings.defaultDir, `content${this.document.path}${this.document.extension}` ]
+      return [
+        this.githubUrls?.docs?.repo ?? this.githubUrls.repo,
+        'edit',
+        this.githubUrls?.docs?.branch ?? this.settings.defaultBranch,
+        this.githubUrls?.docs?.prefix ?? this.settings.defaultDir,
+        `content${this.document.path}${this.document.extension}`
+      ]
         .filter(path => !!path)
         .join('/')
     }
