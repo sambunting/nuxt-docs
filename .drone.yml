@@ -59,6 +59,8 @@ steps:
         from_secret: aws_access_key_id
       AWS_SECRET_ACCESS_KEY:
         from_secret: aws_secret_access_key
+    depends_on:
+      - lint
     settings:
       restore: true
       cache_key: '{{ .Commit.Branch }}'
@@ -78,6 +80,8 @@ steps:
 
   - name: rebuild-cache
     image: meltwater/drone-cache
+    depends_on:
+      - build
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
