@@ -64,6 +64,7 @@ steps:
     settings:
       restore: true
       path_style: true
+      endpoint: https://s3.kilic.dev
       bucket: drone-cache
       region: eu-1
       cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
@@ -92,6 +93,7 @@ steps:
     settings:
       rebuild: true
       path_style: true
+      endpoint: https://s3.kilic.dev
       bucket: drone-cache
       region: eu-1
       cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
