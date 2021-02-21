@@ -1,23 +1,30 @@
-## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
-
-
-### Bug Fixes
-
-* update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
-
-## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
-
+# @cenk1cenk2/nuxt-content-theme-docs [1.1.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.1.0) (2021-02-21)
 
 ### Bug Fixes
 
-* update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
+- update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
+
+### Features
+
+- force push ([a517079](https://github.com/cenk1cenk2/nuxt-docs/commit/a5170797255d5bca44cca4a922e85c5c4f75b915))
 
 ## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
 
+### Bug Fixes
+
+- update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
+
+## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
 
 ### Bug Fixes
 
-* update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
+- update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
+
+## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
+
+### Bug Fixes
+
+- update how toc is handled and add hover ([a4d4521](https://github.com/cenk1cenk2/nuxt-docs/commit/a4d45219b198e6a21fdfd40dd2753dbc09feb1ba))
 
 ## @cenk1cenk2/nuxt-content-theme-docs [1.0.5](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.0.5) (2021-02-21)
 
