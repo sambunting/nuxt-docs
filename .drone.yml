@@ -52,25 +52,25 @@ steps:
       event:
         - push
 
-  - name: restore-cache
-    image: meltwater/drone-cache
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    depends_on:
-      - lint
-    settings:
-      restore: true
-      path_style: true
-      endpoint: https://s3.kilic.dev
-      bucket: drone-cache
-      region: eu-1
-      cache_key: '{{ .Commit.Branch }}'
-      mount:
-        - 'docs/listr2/.nuxt'
-        - 'docs/listr2/dist'
+  # - name: restore-cache
+  #   image: meltwater/drone-cache
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #       from_secret: aws_access_key_id
+  #     AWS_SECRET_ACCESS_KEY:
+  #       from_secret: aws_secret_access_key
+  #   depends_on:
+  #     - lint
+  #   settings:
+  #     restore: true
+  #     path_style: true
+  #     endpoint: https://s3.kilic.dev
+  #     bucket: drone-cache
+  #     region: eu-1
+  #     cache_key: '{{ .Commit.Branch }}'
+  #     mount:
+  #       - 'docs/listr2/.nuxt'
+  #       - 'docs/listr2/dist'
 
   - name: build
     image: node:current-alpine
@@ -81,25 +81,25 @@ steps:
       - yarn command generate
       - yarn command copy:dockerfile
 
-  - name: rebuild-cache
-    image: meltwater/drone-cache
-    depends_on:
-      - build
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    settings:
-      rebuild: true
-      path_style: true
-      endpoint: https://s3.kilic.dev
-      bucket: drone-cache
-      region: eu-1
-      cache_key: '{{ .Commit.Branch }}'
-      mount:
-        - 'docs/listr2/.nuxt'
-        - 'docs/listr2/dist'
+  # - name: rebuild-cache
+  #   image: meltwater/drone-cache
+  #   depends_on:
+  #     - build
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #       from_secret: aws_access_key_id
+  #     AWS_SECRET_ACCESS_KEY:
+  #       from_secret: aws_secret_access_key
+  #   settings:
+  #     rebuild: true
+  #     path_style: true
+  #     endpoint: https://s3.kilic.dev
+  #     bucket: drone-cache
+  #     region: eu-1
+  #     cache_key: '{{ .Commit.Branch }}'
+  #     mount:
+  #       - 'docs/listr2/.nuxt'
+  #       - 'docs/listr2/dist'
 
   - name: publish-docs-listr2
     image: plugins/docker
