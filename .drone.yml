@@ -80,7 +80,6 @@ steps:
       - yarn command generate
       - yarn command copy:dockerfile
 
-  # add back cache
   - name: rebuild-cache
     image: meltwater/drone-cache
     depends_on:
