@@ -13,7 +13,7 @@ export default theme(
       },
       ackee: {
         server: 'https://ackee.kilic.dev',
-        domainId: '7b3c9779-442c-40c6-9931-ea71977c52a8',
+        domainId: 'bb020572-babc-4932-aaf7-787e2dc9d66f',
         detailed: true
       }
     },
