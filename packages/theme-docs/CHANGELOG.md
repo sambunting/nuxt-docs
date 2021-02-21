@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [1.0.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.1...@cenk1cenk2/nuxt-content-theme-docs@1.0.2) (2021-02-21)
+
+
+### Bug Fixes
+
+* add husky add padding at bottom for buttons ([135c524](https://github.com/cenk1cenk2/nuxt-docs/commit/135c524329558c8a84928e498b98591f092bf54a))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [1.0.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.0...@cenk1cenk2/nuxt-content-theme-docs@1.0.1) (2021-02-20)
 
 
