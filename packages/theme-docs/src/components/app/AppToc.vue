@@ -8,15 +8,14 @@
           'lg:px-8': settings.layout === 'single'
         }"
       >
-        <div class="flex justify-between self-center">
-          <p class="mb-3 lg:mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold">{{ $t('toc.title') }}</p>
-          <span class="lg:hidden text-xl mr-2" aria-label="Toggle table of contents for this page." @click.stop="tocToggle = !tocToggle">
-            <FontAwesomeIcon
-              v-if="tocToggle"
-              class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark-hover:text-primary-500 dark-hover:scale-200"
-              :icon="faChevronCircleUp"
-            />
-            <FontAwesomeIcon v-else class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark-hover:text-primary-500" :icon="faChevronCircleDown" />
+        <div class="flex justify-between self-center group" @click.stop="tocToggle = !tocToggle">
+          <span class="mb-3 lg:mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold">
+            <p class="group-hover:text-primary-500 block-inline lg:hidden">{{ $t('toc.title') }}</p>
+            <p class="hidden lg:inline">{{ $t('toc.title') }}</p>
+          </span>
+          <span class="lg:hidden text-xl mr-2" aria-label="Toggle table of contents for this page.">
+            <FontAwesomeIcon v-if="tocToggle" class="text-gray-700 dark:text-gray-300 group-hover:text-primary-500" :icon="faChevronCircleUp" />
+            <FontAwesomeIcon v-else class="text-gray-700 dark:text-gray-300 group-hover:text-primary-500" :icon="faChevronCircleDown" />
           </span>
         </div>
         <div

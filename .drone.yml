@@ -52,6 +52,21 @@ steps:
       event:
         - push
 
+  - name: restore-cache
+    image: meltwater/drone-cache
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    settings:
+      restore: true
+      cache_key: '{{ .Commit.Branch }}'
+      bucket: drone-cache
+      mount:
+        - 'docs/listr2/.nuxt'
+        - 'docs/listr2/dist'
+
   - name: build
     image: node:current-alpine
     depends_on:
@@ -60,6 +75,21 @@ steps:
       - yarn command build
       - yarn command generate
       - yarn command copy:dockerfile
+
+  - name: rebuild-cache
+    image: meltwater/drone-cache
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    settings:
+      rebuild: true
+      cache_key: '{{ .Commit.Branch }}'
+      bucket: drone-cache
+      mount:
+        - 'docs/listr2/.nuxt'
+        - 'docs/listr2/dist'
 
   - name: publish-docs-listr2
     image: plugins/docker
