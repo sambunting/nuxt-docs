@@ -65,6 +65,7 @@ steps:
       restore: true
       path_style: true
       bucket: drone-cache
+      region: eu-west-1
       cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
       mount:
         - 'docs/listr2/.nuxt'
@@ -92,6 +93,7 @@ steps:
       rebuild: true
       path_style: true
       bucket: drone-cache
+      region: eu-west-1
       cache_key: '{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}'
       mount:
         - 'docs/listr2/.nuxt'
