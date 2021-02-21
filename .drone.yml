@@ -66,8 +66,6 @@ steps:
     working_dir: /drone/src/docs/listr2
     depends_on:
       - build
-    commands:
-      - cp /drone/src/Dockerfile /drone/src/docs/listr2/
     settings:
       registry: docker.kilic.dev
       repo: docker.kilic.dev/html-docs-listr2
