@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.0.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* rendering issue ([f212d69](https://github.com/cenk1cenk2/nuxt-docs/commit/f212d69ea2a9b3391306bce6483ddec262023cf8))
+
 # @cenk1cenk2/nuxt-content-theme-docs [2.0.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.1.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.0) (2021-04-19)
 
 ### Bug Fixes
