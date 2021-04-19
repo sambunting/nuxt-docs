@@ -1,3 +1,20 @@
+# @cenk1cenk2/nuxt-content-theme-docs [2.0.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.1.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* linting error ([9cfc83f](https://github.com/cenk1cenk2/nuxt-docs/commit/9cfc83f064234b62e675e135fdc448c347885015))
+
+
+### Performance Improvements
+
+* update tailwind and nuxt configuration ([7a2817e](https://github.com/cenk1cenk2/nuxt-docs/commit/7a2817e57915f56340183484e1f9efe681b95660))
+
+
+### BREAKING CHANGES
+
+* tailwind configuration is completely changed
+
 # @cenk1cenk2/nuxt-content-theme-docs [1.1.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.0.4...@cenk1cenk2/nuxt-content-theme-docs@1.1.0) (2021-02-21)
 
 ### Bug Fixes
