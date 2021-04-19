@@ -145,7 +145,7 @@ export const actions = {
         })
         .then(res => res.json())
       releases = data
-        .filter(r => !r.draft)
+        .filter(r => !r.draft && !r.prerelease)
         .map((release) => {
           return {
             name: (release.name || release.tag_name).replace('Release ', ''),
