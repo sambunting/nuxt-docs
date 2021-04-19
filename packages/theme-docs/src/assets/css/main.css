@@ -1,7 +1,7 @@
-.dark-mode .light-img {
+.dark .light-img {
   display: none;
 }
-.dark-mode .dark-img {
+.dark .dark-img {
   display: block;
 }
 .dark-img {
@@ -37,7 +37,7 @@
   @apply break-words;
 
   img {
-    display: inline-block !important;
+    @apply !inline-block;
   }
 
   & h2,
@@ -61,9 +61,9 @@
         @apply text-primary-500 font-normal text-xl leading-8 -ml-5 pr-2 absolute opacity-100;
       }
 
-      @screen lg {
-        @apply ml-0;
+      @apply lg:ml-0;
 
+      @screen lg {
         &::before {
           @apply opacity-0;
         }

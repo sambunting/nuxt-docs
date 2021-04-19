@@ -33,12 +33,13 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
 
 import AppCopyButton from '~/components/app/AppCopyButton'
 
-export default {
+export default defineComponent({
   name: 'PageSlug',
   layout ({ store }) {
     return store.state.settings.layout || 'default'
@@ -48,7 +49,7 @@ export default {
       redirect(app.localePath('/'))
     }
   },
-  async asyncData ({ $content, store, app, params, error }) {
+  async asyncData ({ $content, app, params, error }) {
     const path = `/${app.i18n.locale}/${params.pathMatch || 'index'}`
     const [ document ] = await $content({ deep: true }).where({ path }).fetch()
     if (!document) {
@@ -119,5 +120,5 @@ export default {
       }
     }, 100)
   }
-}
+})
 </script>

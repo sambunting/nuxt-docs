@@ -12,8 +12,9 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 /* eslint-disable no-underscore-dangle */
-export default {
+export default defineComponent({
   props: {
     src: {
       type: String,
@@ -48,10 +49,10 @@ export default {
       delete this.__observer
     }
   }
-}
+})
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .codesandbox,
 .codesandbox iframe {
   @apply w-full rounded-md overflow-hidden h-64;

@@ -10,7 +10,7 @@ For testing purposes you can use the verbose renderer by passing in the option o
 
 If you want to change the logger of the verbose renderer you can do that by passing a class implementing `Logger` class which is exported from the index and passing it through as a renderer option with `{ renderer: 'verbose', rendererOptions: { logger: MyLoggerClass } }`.
 
-Verbose renderer will always output predicted output with no fancy features.
+The verbose renderer will always output predicted output with no fancy features.
 
 | On              | Output                                                              |
 | --------------- | ------------------------------------------------------------------- |
@@ -21,3 +21,4 @@ Verbose renderer will always output predicted output with no fancy features.
 | Spit Output     | \[DATA\] \${TASK OUTPUT}                                            |
 | Title Change    | \[TITLE\] \${NEW TITLE}                                             |
 | Rollback        | \[ROLLBACK\] \${TASK TITLE ?? 'Task without title.'}                |
+| Retry           | \[Retrying\] \${TASK TITLE ?? 'Task without title.'}                |

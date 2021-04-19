@@ -47,8 +47,9 @@
 
 <script>
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   data () {
     return {
       q: '',
@@ -118,5 +119,5 @@ export default {
       this.q = ''
     }
   }
-}
+})
 </script>

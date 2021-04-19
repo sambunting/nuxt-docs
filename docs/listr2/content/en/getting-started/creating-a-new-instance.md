@@ -7,7 +7,7 @@ position: 3
 
 ## Generate New Class
 
-Create a new task list. It will returns a Listr class.
+Create a new task list. It will return a Listr class.
 
 ```typescript
 import { Listr } from 'listr2'
@@ -28,7 +28,7 @@ const tasks = new Listr<Ctx>(
 
 ## Run the Generated Task List
 
-Then you can run this task lists as a async function and it will return the context that is used.
+Then you can run this task lists as an async function and it will return the context that is used.
 
 ```typescript
 try {

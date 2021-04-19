@@ -10,21 +10,11 @@ Tasks can be enabled depending on the variables programmatically. This enables t
 
 <alert type="warning">
 
-Task enabling is determined up-on the initial run of the Listr when you actually create the class, so becareful with using it while using internal context variables.
+Task enabling is determined up on the initial run of the Listr when you actually create the class for a given subtask, so be careful with using it while using internal context variables.
 
 </alert>
 
-<alert type="warning">
-
-Please pay attention to asynchronous operation while designing a context enabled task list since it does not await for any variable in the context.
-
-</alert>
-
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/task-enable.example.ts) for more detailed and further examples._
-
-</alert>
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/task-enable.example.ts', name: 'examples section' }"></ExampleAlert>
 
 ```typescript
 new Listr<Ctx>(

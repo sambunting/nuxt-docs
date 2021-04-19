@@ -14,14 +14,15 @@
 
 <script>
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   computed: {
     ...mapGetters([ 'settings', 'githubUrls' ]),
     faGithub () {
       return faGithub
     }
   }
-}
+})
 </script>

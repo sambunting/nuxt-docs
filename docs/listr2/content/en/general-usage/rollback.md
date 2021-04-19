@@ -3,19 +3,16 @@ title: Rollback
 description: 'Rollback a task if it has thrown out an error.'
 category: General Usage
 position: 12
+badge: v3.3.0+
 ---
 
-## Introduction <badge>v3.3.0+</badge>
+## Introduction
 
-If you want to rollback a task or execute a callback if its subtasks failed, or the task itself failed, you can create a entry just like the task itself with the same variables called `rollback`. Rollback will only execute if the task itself has marked as failed. Related issue is [#257](https://github.com/cenk1cenk2/listr2/issues/257).
+If you want to roll back a task or execute a callback if its subtasks failed, or the task itself failed, you can create an entry just like the task itself with the same variables called `rollback`. Rollback will only execute if the task itself has marked as failed. Related issue is [#257](https://github.com/cenk1cenk2/listr2/issues/257).
 
-> Since when you return new listr as a subtask list, it is not the easiest and most convient to access the on fail action, and each subtask should be handled seperately. Rollback is not very useful when it comes to the singular tasks that can utilize a try/catch block, but when it is not possible it is easier to use this.
+> Since when you return new listr as a subtask list, it is not the easiest and most convenient to access the on fail action, and each subtask should be handled separately. Rollback is not very useful when it comes to the singular tasks that can utilize a try/catch block, but when it is not possible it is easier to use this.
 
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/rollback.example.ts) for more detailed and further examples._
-
-</alert>
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/rollback.example.ts', name: 'examples section' }"></ExampleAlert>
 
 ```typescript
 task = new Listr<Ctx>(
@@ -70,8 +67,10 @@ try {
 
 ## Options
 
-Rollback by default is to throw an exception and stop the execution of the upcoming tasks. But this can be overwritten by `{ exitAfterRollback: false }` option. This is a main Listr option which acts indeferent of the `exitOnError`.
+Rollback by default is to throw an exception and stop the execution of the upcoming tasks. But this can be overwritten by `{ exitAfterRollback: false }` option. This is the main Listr option that acts indifferent of the `exitOnError`.
 
-## Rendering
+## Renderer
 
-When rollback is activated the default renderer will change the spinner color to red, if the rollback successfully concludes then it will be a red back arrow, else it would be like a normal error where it will show the error from the rollback action itself.
+### Default Renderer
+
+When rollback is activated the default renderer will change the spinner color to red, if the rollback successfully concludes then it will be a redback arrow, else it would be like a normal error where it will show the error from the rollback action itself.

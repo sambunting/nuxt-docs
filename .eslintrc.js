@@ -4,7 +4,7 @@ module.exports = {
     parser: 'babel-eslint',
     sourceType: 'module'
   },
-  extends: [ '@nuxtjs', '@cenk1cenk2/eslint-config' ],
+  extends: ['@nuxtjs', '@cenk1cenk2/eslint-config/index', '@cenk1cenk2/eslint-config/typescript'],
   rules: {
     'vue/singleline-html-element-content-newline': 0,
     'vue/multiline-html-element-content-newline': 0,
@@ -20,10 +20,10 @@ module.exports = {
             group: 'parent'
           }
         ],
-        pathGroupsExcludedImportTypes: [ 'builtin' ],
+        pathGroupsExcludedImportTypes: ['builtin'],
         groups: [
-          [ 'builtin', 'external' ],
-          [ 'index', 'parent', 'sibling' ]
+          ['builtin', 'external'],
+          ['index', 'parent', 'sibling']
         ],
         'newlines-between': 'always',
         alphabetize: {

@@ -5,6 +5,8 @@ category: General Usage
 position: 10
 ---
 
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/show-output.example.ts', name: 'examples section' }"></ExampleAlert>
+
 ## Show Output Through the Task Itself
 
 This will show the output in a small bar that can only show the last output from the task.
@@ -34,11 +36,7 @@ new Listr<Ctx>(
 
 Since observables and streams are supported they can also be used to generate output.
 
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/stream.example.ts) for more detailed and further examples._
-
-</alert>
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/stream.example.ts', name: 'examples section' }"></ExampleAlert>
 
 ```typescript
 new Listr<Ctx>(
@@ -67,11 +65,11 @@ new Listr<Ctx>(
 
 ## Accessing `process.stdout` to Render a Stream <badge>v2.1.0+</badge>
 
-Since `process.stdout` method is controlled by `log-update` to create a refreshing interface, for anything else that might need to output data and can use `Writeable` streams, `task.stdout()` will create a new punch-hole to redirect all the write requests to `task.output`. This is especially beneficial for external libraries like `enquirer`, which is already integrated or something like `ink`.
+Since `process.stdout` method is controlled by `log-update` to create a refreshing interface, for anything else that might need to output data and can use `Writeable` streams, `task.stdout()` will create a new punch-hole to redirect all the write requests to `task.output`. This is especially beneficial for external libraries like `enquirer`, which is already integrated, or something like `ink`.
 
 <alert type="warning">
 
-This unfortunately relies on cleaning all ANSI escape characters, since currently I do not find a good way to sandbox them inside `log-update` which utilizes the cursor position by itself. So use this with caution, because it will only render the last chunk in a stream as well as cleaning up all the ANSI escape characters except for styles.
+This, unfortunately, relies on cleaning all ANSI escape characters, since currently, I do not find a good way to sandbox them inside `log-update` which utilizes the cursor position by itself. So use this with caution, because it will only render the last chunk in a stream as well as clean up all the ANSI escape characters except for styles.
 
 </alert>
 
@@ -132,17 +130,30 @@ async function main(): Promise<void> {
 main()
 ```
 
-## Renderer Options
+## Renderer
 
-### Persistent Output
+### Default Renderer
 
-<badge>Default-Renderer Only</badge>
+#### Persistent Output
 
-To keep the output when the task finishes while using default renderer, you can set `{ persistentOutput: true }` in the `Task`.
+To keep the output when the task finishes while using the default renderer, you can set `{ persistentOutput: true }` in the `Task` options.
 
-### Use the Bottom Bar
+```typescript
+new Listr<Ctx>(
+  [
+    {
+      title: 'This task will execute.',
+      task: async (ctx, task): Promise<void> => {
+        task.output = 'I will push an output. [0]'
+      },
+      options: { persistentOutput: true }
+    }
+  ],
+  { concurrent: false }
+)
+```
 
-<badge>Default-Renderer Only</badge>
+#### Use the Bottom Bar
 
 If task output to the bottom bar is selected, it will create a bar at the end of the tasks leaving one line return space in between. The bottom bar can only be used in the default renderer.
 
@@ -175,24 +186,3 @@ new Listr<Ctx>(
   { concurrent: false }
 )
 ```
-
-```typescript
-new Listr<Ctx>(
-  [
-    {
-      title: 'This task will execute.',
-      task: async (ctx, task): Promise<void> => {
-        task.output = 'I will push an output. [0]'
-      },
-      options: { persistentOutput: true }
-    }
-  ],
-  { concurrent: false }
-)
-```
-
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/show-output.example.ts) for more detailed and further examples._
-
-</alert>

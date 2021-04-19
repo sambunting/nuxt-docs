@@ -7,6 +7,6 @@
   }
 }
 
-.dark-mode .nuxt-content-editor {
+.dark .nuxt-content-editor {
   @apply bg-gray-800;
 }

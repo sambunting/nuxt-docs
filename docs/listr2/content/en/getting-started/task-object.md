@@ -23,7 +23,6 @@ export interface ListrTask<Ctx = ListrContext, Renderer extends ListrRendererFac
    *
    * Give this task a title if you want to track it by name in the current renderer.
    * Tasks without a title will tend to hide themselves in the default renderer and useful for
-   * things like prompts and such.
    */
   title?: string
   /**
@@ -31,12 +30,16 @@ export interface ListrTask<Ctx = ListrContext, Renderer extends ListrRendererFac
    *
    * Task can be a sync or async function, an Observable or a Stream.
    */
-  task: (ctx: Ctx, task: ListrTaskWrapper<Ctx, Renderer>) => void | ListrTaskResult<Ctx>
+  task: (ctx: Ctx, task: TaskWrapper<Ctx, Renderer>) => void | ListrTaskResult<Ctx>
   /**
    * Runs a specific event if the current task or any of the subtasks has failed.
    * Mostly useful for rollback purposes for subtasks.
    */
-  rollback?: (ctx: Ctx, task: ListrTaskWrapper<Ctx, Renderer>) => void | ListrTaskResult<Ctx>
+  rollback?: (ctx: Ctx, task: TaskWrapper<Ctx, Renderer>) => void | ListrTaskResult<Ctx>
+  /**
+   * Adds a couple of retries to the task if the task fails
+   */
+  retry?: number
   /**
    * Skip this task depending on the context.
    *
@@ -56,6 +59,10 @@ export interface ListrTask<Ctx = ListrContext, Renderer extends ListrRendererFac
    * be displayed as never.
    */
   options?: ListrGetRendererTaskOptions<Renderer>
+  /**
+   * Set exit on error option from task level instead of setting it for all the subtasks.
+   */
+  exitOnError?: boolean | ((ctx: Ctx) => boolean | Promise<boolean>)
 }
 ```
 
@@ -64,9 +71,6 @@ export interface ListrTask<Ctx = ListrContext, Renderer extends ListrRendererFac
 Options is an object with the following properties, can customize the execution of the given task list.
 
 ```typescript
-/**
- * Options to set the behavior of this base task.
- */
 export interface ListrOptions<Ctx = ListrContext> {
   /**
    * Concurrency will set how many tasks will be run in parallel.
@@ -80,7 +84,7 @@ export interface ListrOptions<Ctx = ListrContext> {
   /**
    * Determine the behavior of exiting on errors.
    *
-   * @default true > exit on any error comming from the tasks.
+   * @default true > exit on any error coming from the tasks.
    */
   exitOnError?: boolean
   /**
@@ -118,6 +122,7 @@ export interface ListrOptions<Ctx = ListrContext> {
    * Inject data directly to TaskWrapper.
    */
   injectWrapper?: {
+    // eslint-disable-next-line @typescript-eslint/ban-types
     enquirer?: Enquirer<object>
   }
 }

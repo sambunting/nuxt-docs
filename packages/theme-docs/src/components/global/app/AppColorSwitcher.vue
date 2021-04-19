@@ -29,8 +29,9 @@
 
 <script>
 import { faLightbulb, faMoon } from '@fortawesome/free-regular-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   computed: {
     faLightbulb () {
       return faLightbulb
@@ -39,6 +40,6 @@ export default {
       return faMoon
     }
   }
-}
+})
 </script>
 >

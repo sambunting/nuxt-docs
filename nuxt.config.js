@@ -14,5 +14,13 @@ export const configuration = {
     ],
     defaultLocale: 'en'
   },
-  buildModules: [ 'nuxt-ackee' ]
+  colorMode: {
+    classSuffix: ''
+  },
+  server: {
+    host: '0.0.0.0'
+  },
+  tailwind: {
+    jit: true
+  }
 }

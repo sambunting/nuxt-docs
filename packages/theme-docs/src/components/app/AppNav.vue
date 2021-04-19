@@ -44,9 +44,10 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   computed: {
     ...mapGetters([ 'settings' ]),
     menu: {
@@ -81,5 +82,5 @@ export default {
       return false
     }
   }
-}
+})
 </script>

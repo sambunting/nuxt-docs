@@ -7,7 +7,7 @@ position: 11
 
 ## Introduction
 
-You can throw errors out of the tasks to show they are unsuccessful. While this gives a visual output on the terminal, it also handles how to handle tasks that are failed. The default behavior is any of the tasks have failed, it will deem itself as unsuccessful and exit. This behavior can be changed with `exitOnError` option.
+You can throw errors out of the tasks to show they are unsuccessful. While this gives a visual output on the terminal, it also handles how to handle tasks that are failed. The default behavior is any of the tasks have failed, it will deem itself as unsuccessful and exit. This behavior can be changed with `exitOnError` option. If the `exitOnError` is `true`, the first error encountered will be thrown out again.
 
 If you want to quit the application pre-maturely and fail a specific task just throw out an `Error`.
 
@@ -23,7 +23,7 @@ Throwing an error will stop any further action whether it is in running with `co
 
 <alert type="info">
 
-You don't have to catch errors explicitly since it will always be collected by `Listr`.
+You don't have to catch errors explicitly since they will always be collected by `Listr`.
 
 </alert>
 
@@ -54,28 +54,9 @@ new Listr<Ctx>(
 )
 ```
 
-```typescript
-new Listr<Ctx>(
-  [
-    {
-      title: 'This task will fail.',
-      task: async (): Promise<void> => {
-        await delay(2000)
-        throw new Error('This task failed after 2 seconds.')
-      }
-    },
-    {
-      title: 'This task will execute.',
-      task: (ctx, task): void => {
-        task.title = 'I will change my title since it is concurrent.'
-      }
-    }
-  ],
-  { concurrent: true }
-)
-```
+## Changing the Behavior
 
-## Changing Default Behavior with `exitOnError` option
+### Per Listr
 
 ```typescript
 new Listr<Ctx>(
@@ -98,7 +79,7 @@ new Listr<Ctx>(
 )
 ```
 
-## Changing `exitOnError` per Subtask
+### Per Subtask
 
 ```typescript
 new Listr<Ctx>(
@@ -135,15 +116,31 @@ new Listr<Ctx>(
 )
 ```
 
-## The First Error Encountered Will Be Thrown Out
+### Per Task
 
 ```typescript
-try {
-  const context = await task.run()
-} catch (e) {
-  logger.fail(e)
-  // which will show the first error
-}
+task = new Listr<Ctx>(
+  [
+    {
+      title: 'This task will fail.',
+      task: async (): Promise<void> => {
+        await delay(2000)
+        throw new Error('This task failed after 2 seconds.')
+      },
+      exitOnError: false
+    },
+    {
+      title: 'This task will execute.',
+      task: (_, task): void => {
+        task.title = 'I will change my title if this executes.'
+      }
+    }
+  ],
+  {
+    concurrent: false,
+    exitOnError: true
+  }
+)
 ```
 
 ## Error Collection <badge>v2.0.0+</badge>
@@ -164,9 +161,9 @@ public errors?: Error[]
 public context?: any
 ```
 
-## Renderer Options
+## Renderer
 
-<badge>Default Renderer</badge>
+### Default Renderer
 
 ```typescript
   /**

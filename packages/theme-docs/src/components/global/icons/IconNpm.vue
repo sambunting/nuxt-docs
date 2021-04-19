@@ -14,14 +14,15 @@
 
 <script>
 import { faNpm } from '@fortawesome/free-brands-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   computed: {
     ...mapGetters([ 'settings', 'npmUrls' ]),
     faNpm () {
       return faNpm
     }
   }
-}
+})
 </script>

@@ -22,9 +22,10 @@
 
 <script>
 import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   props: {
     prev: {
       type: Object,
@@ -44,5 +45,5 @@ export default {
       return faLongArrowAltRight
     }
   }
-}
+})
 </script>

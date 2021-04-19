@@ -7,21 +7,15 @@ position: 10
 
 ## Introduction
 
-Skip is more or less the same with enable when used at `Task` level. But the main difference is it will always render the given task. If it is skipped it renders it as skipped.
-
-There are to main ways to skip a task. One is utilizing the `Task` so that instead of enabled it will show a visual output while the other one is inside the task.
+Skip is more or less the same with enabling when used at `Task` level. But the main difference is it will always render the given task. If it is skipped it renders it as skipped.
 
 <alert type="warning">
 
-Please pay attention to asynchronous operation while designing a context enabled task list since it does not await for any variable in the context.
+Please pay attention to asynchronous operation while designing a context-enabled task list since it does not wait for any variable in the context.
 
 </alert>
 
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/task-skip.example.ts) for more detailed and further examples._
-
-</alert>
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/task-skip.example.ts', name: 'examples section' }"></ExampleAlert>
 
 ## Skip a task inside the task itself after some logic is done
 
@@ -61,21 +55,21 @@ new Listr<Ctx>(
 )
 ```
 
-## Renderer Options
+## Renderer
 
-<badge>Default Renderer</badge>
+### Default Renderer
 
 ```typescript
   /**
-   * collapse skip messages in to single message and override the task title
+   * collapse skip messages into single message and override the task title
    * @default true
    */
   collapseSkips?: boolean
   /**
    * show skip messages or show the original title of the task, this will also disable collapseSkips mode
    *
-   * You can disable showing the skip messages, eventhough you passed in a message by settings this option,
-   * if you want to keep the original task title intacted.
+   * You can disable showing the skip messages, even though you passed in a message by settings this option,
+   * if you want to keep the original task title intact.
    * @default true
    */
   showSkipMessage?: boolean
@@ -85,7 +79,7 @@ new Listr<Ctx>(
    */
   suffixSkips?: boolean
   /**
-   * collapse error messages in to single message in task title
+   * collapse error messages into single message in the task title
    * @default true
    */
 ```

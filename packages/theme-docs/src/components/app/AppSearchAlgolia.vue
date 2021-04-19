@@ -3,11 +3,13 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
+
 function isSpecialClick (event) {
   return event.button === 1 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey
 }
 
-export default {
+export default defineComponent({
   props: {
     options: {
       type: Object,
@@ -116,10 +118,10 @@ export default {
       this.initialize(options, lang)
     }
   }
-}
+})
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .DocSearch {
   --docsearch-primary-color: var(--color-primary-500);
   --docsearch-highlight-color: var(--docsearch-primary-color);
@@ -145,7 +147,7 @@ export default {
   display: inline !important;
 }
 
-.dark-mode {
+.dark {
   & .DocSearch {
     --docsearch-text-color: var(--color-gray-300);
     --docsearch-container-background: rgba(9, 10, 17, 0.8);

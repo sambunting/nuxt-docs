@@ -30,9 +30,10 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   layout ({ store }) {
     return store.state.settings.layout || 'default'
   },
@@ -61,5 +62,5 @@ export default {
       return date.toLocaleDateString(this.$i18n.locale)
     }
   }
-}
+})
 </script>

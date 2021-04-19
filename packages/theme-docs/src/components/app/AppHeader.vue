@@ -57,9 +57,10 @@
 
 <script>
 import { faChevronUp, faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   data () {
     return {
       scrolled: 0
@@ -117,5 +118,5 @@ export default {
     },
     noop () {}
   }
-}
+})
 </script>

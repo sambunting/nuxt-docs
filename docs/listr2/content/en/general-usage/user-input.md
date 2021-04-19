@@ -1,6 +1,6 @@
 ---
 title: User Input
-description: 'You can interact with user with prompts.'
+description: 'You can interact with the user with prompts.'
 category: General Usage
 position: 7
 ---
@@ -11,13 +11,7 @@ The input module uses the beautiful [enquirer](https://www.npmjs.com/package/enq
 
 <alert type="warning">
 
-Attention: Enquirer is a optional dependency. Please install it first.
-
-</alert>
-
-<alert type="info">
-
-I did not add this as a peer dependency because in JavaScript you do not need it at all, but it will complain in Typescript, even though you are not using it, since I am importing types from it, so if you are not using it please install it as development dependency, if you use prompts, you should install it anyhow.
+Attention: Enquirer is an optional dependency. Please install it first.
 
 </alert>
 
@@ -31,15 +25,11 @@ It is not advisable to run prompts in a concurrent task because multiple prompts
 
 </alert>
 
-Prompts, since their rendering is getting passed as a data output will render multiple times in verbose renderer since verbose renderer is not terminal-updating intended to be used in nonTTY environments. It will work anyhow albeit it might not look great.
+Prompts, since their rendered output gets passed as a data output will render multiple times in verbose renderer since verbose renderer is not terminal-updating intended to be used in non TTY environments. It will work anyhow albeit it might not look great. Since prompts are not even intended for non TTY terminals, this is a novelty.
 
 Prompts can either have a title or not but they will always be rendered at the end of the current console while using the default renderer.
 
-<alert type="info">
-
-_Please refer to [examples section](https://github.com/cenk1cenk2/listr2/tree/master/examples/get-user-input.example.ts) for more detailed and further examples._
-
-</alert>
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/get-user-input.example.ts', name: 'examples section' }"></ExampleAlert>
 
 ## Create a Prompt
 
@@ -49,11 +39,9 @@ Prompts always rendered at the bottom of the tasks when using the default render
 
 <alert type="warning">
 
-Please note that I rewrote the types for enquirer, since some of them was failing for me. So it may have a chance of having some mistakes in it since I usually do not use all of them. Will merge the original types when enquirer fixes them with the pending merge request which can be tracked in the issue [#235](https://github.com/cenk1cenk2/listr2/issues/235).
+Please note that I rewrote the types for enquirer since some of them were failing for me. So it may have a chance of having some mistakes in it since I usually do not use all of them. Will merge the original types when enquirer fixes them with the pending merge request which can be tracked in the issue [#235](https://github.com/cenk1cenk2/listr2/issues/235).
 
 </alert>
-
-**<badge>v2.1.0+ </badge> Defining the prompt style has been changed a little. It know requires type to be integrated inside the prompt itself, instead of passing two variables. Custom prompts still work the same way.**
 
 ### Single Prompt
 
@@ -110,9 +98,9 @@ new Listr<Ctx>(
 )
 ```
 
-## Use an Custom Prompt
+## Use a Custom Prompt
 
-You can either use a custom prompt out of the npm registry or custom-created one as long as it works with [enquirer](https://www.npmjs.com/package/enquirer), it will work expectedly. Instead of passing in the prompt name use the not-generated class.
+You can either use a custom prompt out of the npm registry or a custom-created one as long as it works with [enquirer](https://www.npmjs.com/package/enquirer), it will work expectedly. Instead of passing in the prompt name use the not-generated class.
 
 ```typescript
 import Enquirer from 'enquirer'
@@ -141,24 +129,20 @@ new Listr<Ctx>(
 )
 ```
 
-**<badge>v2.4.2+</badge> This is changed, but would not consider it a breaking change because it was somewhat not working.**
-
 ## Cancel a Prompt <badge>v3.1.0+</badge>
 
 You can cancel a prompt while it's display with the task's provided `cancelPrompt` function.
 
 ```typescript
-import Enquirer from 'enquirer'
-import EditorPrompt from 'enquirer-editor'
 import delay from 'delay'
-
-const enquirer = new Enquirer()
-enquirer.register('editor', Editor)
 
 new Listr<Ctx>(
   [
     {
-      title: 'Custom prompt',
+      task: async (ctx, task): Promise<boolean> => (ctx.input = await task.prompt<boolean>({ type: 'Toggle', message: 'Do you love me?' }))
+    },
+    {
+      title: 'This task will get your input.',
       task: async (ctx, task): Promise<void> => {
         // Cancel the prompt after 5 seconds
         delay(5000).then(() => task.cancelPrompt())
@@ -170,6 +154,6 @@ new Listr<Ctx>(
       }
     }
   ],
-  { concurrent: false, injectWrapper: { enquirer } }
+  { concurrent: false }
 )
 ```

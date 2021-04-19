@@ -28,8 +28,9 @@
 
 <script>
 import { faTerminal } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   computed: {
     availableLocales () {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
@@ -38,5 +39,5 @@ export default {
       return { faTerminal }
     }
   }
-}
+})
 </script>

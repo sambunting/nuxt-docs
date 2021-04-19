@@ -2,7 +2,8 @@
   <div>
     <div v-for="(item, i) in items" :key="i" class="mt-3 flex">
       <span :class="`list-${type}`" class="mt-px mr-3 flex-shrink-0">
-        <FontAwesomeIcon :v-if="type !== 'primary'" :icon="iconName" class="h-6 w-6" />
+        <FontAwesomeIcon v-if="type !== 'primary'" :icon="iconName" class="h-6 w-6" />
+        <IconBadgeCheck v-if="type === 'primary'" class="h-6 w-6" />
       </span>
       {{ item }}
     </div>
@@ -11,8 +12,9 @@
 
 <script>
 import { faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle, faCheckDouble } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   props: {
     items: {
       type: Array,
@@ -44,10 +46,10 @@ export default {
       )
     }
   }
-}
+})
 </script>
 
-<style>
+<style lang="postcss">
 /* Primary */
 .list-primary {
   @apply text-primary-500;

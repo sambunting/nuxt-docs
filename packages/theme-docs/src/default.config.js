@@ -1,6 +1,9 @@
 import { themeModule } from './theme.module'
 
 export const defaultConfig = docsOptions => ({
+  server: {
+    host: '0.0.0.0'
+  },
   target: 'static',
   ssr: true,
   srcDir: __dirname,
@@ -19,7 +22,10 @@ export const defaultConfig = docsOptions => ({
   ],
   css: [ '~/assets/css/main.css' ],
   plugins: [ '@/plugins/markdown', '@/plugins/init', '@/plugins/i18n.client', '@/plugins/vue-scrollactive', '@/plugins/menu.client' ],
-  buildModules: [ themeModule, '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/pwa', '@nuxtjs/google-fonts', '@nuxtjs/fontawesome' ],
+  buildModules: [ themeModule, '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/pwa', '@nuxtjs/google-fonts', '@nuxtjs/fontawesome', '@nuxtjs/composition-api/module' ],
+  colorMode: {
+    classSuffix: ''
+  },
   modules: [ 'nuxt-i18n', '@nuxt/content', '@nuxt/components' ],
   components: true,
   loading: {
@@ -77,5 +83,7 @@ export const defaultConfig = docsOptions => ({
       'DM+Mono': true
     }
   },
-  tailwindcss: {}
+  tailwindcss: {
+    jit: true
+  }
 })

@@ -6,9 +6,10 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import Clipboard from 'clipboard'
 
-export default {
+export default defineComponent({
   data () {
     return {
       state: 'init'
@@ -29,5 +30,5 @@ export default {
       }, 2000)
     })
   }
-}
+})
 </script>

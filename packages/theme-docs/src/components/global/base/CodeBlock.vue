@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   props: {
     label: {
       type: String,
@@ -16,10 +18,10 @@ export default {
       default: false
     }
   }
-}
+})
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .code-block {
   display: none;
 }

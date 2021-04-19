@@ -3,9 +3,10 @@ title: Retry
 description: 'Retrying a task after it fails'
 category: General Usage
 position: 13
+badge: v3.4.0+
 ---
 
-## Introduction <badge>v3.4.0+</badge>
+## Introduction
 
 If you want to retry a task that had failed a couple of times more, you can use the `retry` property in the `Task`. Related issue is [#303](https://github.com/cenk1cenk2/listr2/issues/303).
 
@@ -44,7 +45,7 @@ try {
 
 ## Access via Task
 
-Retrying is self aware and you can access from the task if it is retrying via `task.isRetrying()`. It will either return an object of `count: number, withError: any` where `count` will be `0` for not repeating tasks and `withError` is the last encountered error if retrying.
+Retrying is self-aware and you can access from the task if it is retrying via `task.isRetrying()`. It will either return an object of `count: number, withError: any` where `count` will be `0` for not repeating tasks, and `withError` is the last encountered error if retrying.
 
 ### Access the Retry count
 
@@ -70,7 +71,7 @@ await new Listr(
 ).run()
 ```
 
-### Access the Retry count
+### Access the Last Error Message
 
 ```typescript
 await new Listr(
@@ -95,8 +96,22 @@ await new Listr(
 ).run()
 ```
 
-## Rendering
+## Renderer
 
-When rollback is activated the default renderer will change the spinner color to orange and will suffix it with `[RETRYING-${COUNT}]` with retry count if `suffixRetries: true` is set in the renderer options.
+### Default Renderer
 
-When retrying, the task title will be reset to the original task title and the output will be cleared if it is not written to bottom bar.
+When rollback is activated the default renderer will change the spinner color to orange.
+
+<alert type="info">
+
+When retrying, the task title will be reset to the original task title and the output will be cleared if it is not written to the bottom bar.
+
+</alert>
+
+```typescript
+/**
+ * suffix retry messages with [RETRY-${COUNT}] when retry is enabled for a task
+ * @default true
+ */
+suffixRetries?: boolean
+```

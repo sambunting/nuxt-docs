@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   props: {
     example: {
       type: Object,
@@ -16,5 +18,5 @@ export default {
       })
     }
   }
-}
+})
 </script>

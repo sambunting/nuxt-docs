@@ -11,10 +11,24 @@ export default theme(
           name: '@cenk1cenk2/listr2'
         }
       },
-      ackee: {
-        server: 'https://ackee.kilic.dev',
-        domainId: 'bb020572-babc-4932-aaf7-787e2dc9d66f',
-        detailed: true
+      head: {
+        title: 'Listr2',
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Documentation for npm package listr2.'
+          }
+        ],
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: '/favicon.ico'
+          }
+        ]
       }
     },
 

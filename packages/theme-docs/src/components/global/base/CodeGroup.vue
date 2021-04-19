@@ -18,7 +18,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   data () {
     return {
       tabs: [],
@@ -62,7 +64,7 @@ export default {
       highlightUnderline.style.width = `${activeTab.clientWidth}px`
     }
   }
-}
+})
 </script>
 
 <style scoped>

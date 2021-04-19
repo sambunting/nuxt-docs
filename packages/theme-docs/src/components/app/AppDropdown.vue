@@ -20,9 +20,11 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
+
 import ClickAway from '~/directives/click-away'
 
-export default {
+export default defineComponent({
   name: 'Dropdown',
   directives: {
     'click-away': ClickAway
@@ -40,5 +42,5 @@ export default {
       this.open = false
     }
   }
-}
+})
 </script>

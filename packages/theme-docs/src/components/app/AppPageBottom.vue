@@ -9,9 +9,10 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import { mapGetters } from 'vuex'
 
-export default {
+export default defineComponent({
   props: {
     document: {
       type: Object,
@@ -36,5 +37,5 @@ export default {
         .join('/')
     }
   }
-}
+})
 </script>
