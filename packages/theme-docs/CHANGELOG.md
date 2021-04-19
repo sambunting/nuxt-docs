@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.0.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.1...@cenk1cenk2/nuxt-content-theme-docs@2.0.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* only show last non prepublish version ([b12c20e](https://github.com/cenk1cenk2/nuxt-docs/commit/b12c20e401ee785749eb84b1500dbb221d9806bc))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [2.0.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.1) (2021-04-19)
 
 
