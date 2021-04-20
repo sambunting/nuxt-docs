@@ -13,8 +13,8 @@
   "scripts": {
     "start": "nuxt start",
     "dev:start": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
+    "build": "NODE_ENV=production nuxt build",
+    "generate": "NODE_ENV=production nuxt generate",
     "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./ && markdownlint **/*.md --ignore node_modules --fix",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
     "lint:staged": "lint-staged",
