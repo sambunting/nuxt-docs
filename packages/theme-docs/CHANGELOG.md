@@ -1,3 +1,10 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.0.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.2...@cenk1cenk2/nuxt-content-theme-docs@2.0.3) (2021-04-20)
+
+
+### Bug Fixes
+
+* fix css issue with heading links ([754c879](https://github.com/cenk1cenk2/nuxt-docs/commit/754c8797bf34634193c736faf857095b113c9f67))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [2.0.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.1...@cenk1cenk2/nuxt-content-theme-docs@2.0.2) (2021-04-19)
 
 
