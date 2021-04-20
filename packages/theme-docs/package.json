@@ -20,7 +20,9 @@
     "email": "cenk@kilic.dev"
   },
   "scripts": {
-    "lint": "prettier ./ --loglevel warn --write && eslint --ext .ts,.js,.tsx,.jsx,vue --fix ./",
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "yarn lint:js --fix && yarn lint:style --fix",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
     "lint:staged": "lint-staged",
     "docs:toc": "markdown-toc README.md --bullets='-' -i"
@@ -32,6 +34,9 @@
     ],
     "./*.{json,md}": [
       "prettier --loglevel warn --write"
+    ],
+    "*.{css,vue}": [
+      "stylelint --fix"
     ]
   },
   "files": [

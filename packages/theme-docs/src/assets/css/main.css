@@ -61,7 +61,7 @@
       @apply lg:ml-0;
     }
 
-    &::hover {
+    &:hover {
       & > a::before {
         @apply opacity-100;
       }
