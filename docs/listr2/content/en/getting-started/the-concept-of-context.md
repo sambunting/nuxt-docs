@@ -37,3 +37,43 @@ try {
   console.error(e)
 }
 ```
+
+## Retrieving Context
+
+Context can be retrieved back in two ways.
+
+### As a Result of the Task
+
+A successful task will always return the context.
+
+```typescript
+const tasks = new Listr([
+  {
+    task: (ctx): void => {
+      ctx.test = true
+    }
+  }
+])
+
+const ctx = await tasks.run()
+
+console.log(ctx.test) // true
+```
+
+### As Class Object
+
+The root `listr` class itself holds the context value.
+
+```typescript
+const tasks = new Listr([
+  {
+    task: (ctx): void => {
+      ctx.test = true
+    }
+  }
+])
+
+const ctx = await tasks.run()
+
+console.log(tasks.ctx.test) // true
+```
