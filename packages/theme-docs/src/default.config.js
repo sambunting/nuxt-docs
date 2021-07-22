@@ -84,6 +84,6 @@ export const defaultConfig = docsOptions => ({
     }
   },
   tailwindcss: {
-    jit: true
+    mode: 'jit'
   }
 })
