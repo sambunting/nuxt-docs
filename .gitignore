@@ -10,3 +10,5 @@ coverage
 dist
 sw.*
 .env
+
+docs/listr2/content/en/renderers/simple-renderer.md

@@ -17,7 +17,6 @@
     "nohoist": []
   },
   "scripts": {
-    "postinstall": "husky install",
     "ls": "lerna la",
     "clean": "lerna clean -y && rimraf node_modules yarn.lock",
     "exec": "lerna exec --stream",
@@ -25,11 +24,9 @@
     "docs:toc": "markdown-toc README.md --bullets='-' -i && yarn command --no-bail docs:toc",
     "dev:start:listr2": "cd docs/listr2 && yarn dev:start"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn command lint:staged --concurrency 1",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "yarn command lint:staged --concurrency 1",
+    "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
   },
   "dependencies": {
     "nuxt": "^2.15.4"
@@ -46,7 +43,6 @@
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.3",
     "eslint": "^7.19.0",
-    "husky": "^6.0.0",
     "lerna": "^4.0.0",
     "lint-staged": "^10.5.4",
     "markdown-toc": "^1.2.0",
@@ -54,6 +50,7 @@
     "markdownlint-cli": "^0.27.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "simple-git-hooks": "^2.5.1",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^21.0.0"
