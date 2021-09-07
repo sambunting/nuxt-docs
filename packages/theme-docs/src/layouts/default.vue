@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   head () {
-    const i18nSeo = this.$nuxtI18nSeo()
+    const i18nSeo = this.$nuxtI18nHead()
     const previewUrl = this.settings.url.replace(/\/$/, '') + '/preview.png'
 
     return {

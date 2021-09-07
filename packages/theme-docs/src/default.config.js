@@ -26,7 +26,7 @@ export const defaultConfig = docsOptions => ({
   colorMode: {
     classSuffix: ''
   },
-  modules: [ 'nuxt-i18n', '@nuxt/content', '@nuxt/components' ],
+  modules: [ '@nuxtjs/i18n', '@nuxt/content', '@nuxt/components' ],
   components: true,
   loading: {
     color: docsOptions.primaryColor
