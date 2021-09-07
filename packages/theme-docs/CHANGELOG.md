@@ -1,23 +1,26 @@
-## @cenk1cenk2/nuxt-content-theme-docs [2.0.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.2...@cenk1cenk2/nuxt-content-theme-docs@2.0.3) (2021-04-20)
+# @cenk1cenk2/nuxt-content-theme-docs [2.1.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.3...@cenk1cenk2/nuxt-content-theme-docs@2.1.0) (2021-09-07)
 
+### Features
+
+- **listr2:** update and add simple renderer ([15d78cf](https://github.com/cenk1cenk2/nuxt-docs/commit/15d78cff576bfe8225551e6ab5759918a21caee5))
+
+## @cenk1cenk2/nuxt-content-theme-docs [2.0.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.2...@cenk1cenk2/nuxt-content-theme-docs@2.0.3) (2021-04-20)
 
 ### Bug Fixes
 
-* fix css issue with heading links ([754c879](https://github.com/cenk1cenk2/nuxt-docs/commit/754c8797bf34634193c736faf857095b113c9f67))
+- fix css issue with heading links ([754c879](https://github.com/cenk1cenk2/nuxt-docs/commit/754c8797bf34634193c736faf857095b113c9f67))
 
 ## @cenk1cenk2/nuxt-content-theme-docs [2.0.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.1...@cenk1cenk2/nuxt-content-theme-docs@2.0.2) (2021-04-19)
 
-
 ### Bug Fixes
 
-* only show last non prepublish version ([b12c20e](https://github.com/cenk1cenk2/nuxt-docs/commit/b12c20e401ee785749eb84b1500dbb221d9806bc))
+- only show last non prepublish version ([b12c20e](https://github.com/cenk1cenk2/nuxt-docs/commit/b12c20e401ee785749eb84b1500dbb221d9806bc))
 
 ## @cenk1cenk2/nuxt-content-theme-docs [2.0.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.1) (2021-04-19)
 
-
 ### Bug Fixes
 
-* rendering issue ([f212d69](https://github.com/cenk1cenk2/nuxt-docs/commit/f212d69ea2a9b3391306bce6483ddec262023cf8))
+- rendering issue ([f212d69](https://github.com/cenk1cenk2/nuxt-docs/commit/f212d69ea2a9b3391306bce6483ddec262023cf8))
 
 # @cenk1cenk2/nuxt-content-theme-docs [2.0.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@1.1.0...@cenk1cenk2/nuxt-content-theme-docs@2.0.0) (2021-04-19)
 
