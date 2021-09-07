@@ -2,7 +2,7 @@
 title: Verbose Renderer
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 21
+position: 404
 ---
 
 ## Introduction

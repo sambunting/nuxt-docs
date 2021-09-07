@@ -2,7 +2,7 @@
 title: Showing Output
 description: 'Showing output from a task.'
 category: General Usage
-position: 10
+position: 101
 ---
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/show-output.example.ts', name: 'examples section' }"></ExampleAlert>

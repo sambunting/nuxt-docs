@@ -2,7 +2,7 @@
 title: Custom Logger
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 24
+position: 407
 fullscreen: true
 ---
 

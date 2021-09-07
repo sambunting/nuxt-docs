@@ -2,7 +2,7 @@
 title: Upcoming Changes
 description: 'Upcoming changes for next major version'
 category: Migration
-position: 28
+position: 1001
 fullscreen: true
 badge: v4.0.0+
 ---

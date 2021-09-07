@@ -2,7 +2,7 @@
 title: From v1
 description: 'Migration guide for breaking changes.'
 category: Migration
-position: 27
+position: 1000
 fullscreen: true
 ---
 

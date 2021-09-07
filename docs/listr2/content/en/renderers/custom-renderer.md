@@ -2,7 +2,7 @@
 title: Create Your Renderer
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 23
+position: 406
 ---
 
 ## Introduction

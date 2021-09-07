@@ -2,7 +2,7 @@
 title: Simple Renderer
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 20
+position: 403
 ---
 
 ## Introduction

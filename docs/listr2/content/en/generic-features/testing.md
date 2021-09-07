@@ -2,7 +2,7 @@
 title: Testing
 description: 'For testing you can use a custom or the verbose renderer.'
 category: Generic Features
-position: 26
+position: 303
 fullscreen: true
 ---
 
@@ -21,4 +21,4 @@ The verbose renderer will always output predicted output with no fancy features.
 | Spit Output     | \[DATA\] \${TASK OUTPUT}                                            |
 | Title Change    | \[TITLE\] \${NEW TITLE}                                             |
 | Rollback        | \[ROLLBACK\] \${TASK TITLE ?? 'Task without title.'}                |
-| Retry           | \[Retrying\] \${TASK TITLE ?? 'Task without title.'}                |
+| Retry           | \[RETRYING\] \${TASK TITLE ?? 'Task without title.'}                |

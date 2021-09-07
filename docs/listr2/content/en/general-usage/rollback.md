@@ -2,7 +2,7 @@
 title: Rollback
 description: 'Rollback a task if it has thrown out an error.'
 category: General Usage
-position: 12
+position: 108
 badge: v3.3.0+
 ---
 

@@ -2,7 +2,7 @@
 title: Renderer Fallback Condition
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 18
+position: 401
 fullscreen: true
 badge: v2.3.0+
 ---
