@@ -2,7 +2,7 @@
   <div class="flex flex-wrap-reverse">
     <div class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r">
       <article class="lg:px-8">
-        <h1 class="text-4xl font-black mb-4 leading-none">{{ error.message }}</h1>
+        <h1 class="text-4xl font-black text-center text-red-500 font-semibold mb-4 leading-none">{{ error.message }}</h1>
       </article>
     </div>
   </div>

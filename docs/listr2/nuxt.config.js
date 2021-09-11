@@ -31,7 +31,6 @@ export default theme(
         ]
       }
     },
-
     configuration
   )
 )

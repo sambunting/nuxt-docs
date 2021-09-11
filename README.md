@@ -11,4 +11,3 @@ General documentation stuff that is done with `@nuxt/content`.
 <!-- tocstop -->
 
 ---
-

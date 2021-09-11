@@ -7,9 +7,11 @@ position: 100
 
 ## Introduction
 
-Any task can return a new Listr. But rather than calling it `new Listr` to get the full auto-completion features depending on the parent task's selected renderer, it is a better idea to call it through the `Task` itself by `task.newListr()`. Subtasks can be nested indefinitely as long as the terminal width is enough to support them.
+Any task can return a new Listr. But rather than calling it `new Listr` to get the full auto-completion features depending on the parent task's selected renderer, it is a better idea to call it through the `Task` itself by `task.newListr()`.
 
-<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/subtasks.example.ts', name: 'examples section' }"></ExampleAlert>
+Subtasks can be nested indefinitely as long as the terminal width is enough to support them.
+
+Subtasks give the advantage of grouping similar tasks together, changing the behavior of listr for a certain set of tasks, or cleaning up the rendering area when certain tasks have finished.
 
 ```typescript
 new Listr<Ctx>(
@@ -31,11 +33,15 @@ new Listr<Ctx>(
 )
 ```
 
-## Changing Per Task Options for Subtasks
+<ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/subtasks.example.ts', name: 'examples section' }"></ExampleAlert>
 
-You can change the individual settings of the renderer on a per-subtask basis.
+## Overwriting the Default Behavior Through Subtask Options
 
-This includes renderer options as well as Listr options like `exitOnError`, `concurrent` to be set on a per subtask basis independent of the parent task, while it will always use the most adjacent setting. Some of the options that can not be changed from the renderer are marked as `@global` option in the hover documentation.
+You can change the behavior of listr and selected renderer through the options of a subtask.
+
+This includes selected renderer options as well as Listr options like `exitOnError`, `concurrent` to be set on a per subtask basis independent of the parent task, while it will always **inherit the defaults from the parent task**.
+
+Some of the options that can not be changed from the renderer are marked as `@global` option in the hover documentation. This is not disabled through typings due to me wanting to keep renderer instances fully self-contained.
 
 ```typescript
 new Listr<Ctx>(
@@ -88,11 +94,11 @@ new Listr<Ctx>(
 )
 ```
 
-<ExampleAlert :example="{ link: '/general-usage/handling-errors', name: 'throw errors section' }"></ExampleAlert>
-
 ## Access Parent Task from Subtasks <badge>v2.6.0+</badge>
 
-You can access parent task class from subtasks via passing a function to `task.newListr`. This way you can change the title of the parent task or access its functionality. Skipping will not work reliably since the tasks run asynchronously. But added in for a useful case of changing titles from subtasks with bringing it up in the [issue #141](https://github.com/cenk1cenk2/listr2/issues/141).
+You can access the parent task class from subtasks via passing the function signature `(parent) => Listr` to `task.newListr`. This way you can change the title of the parent task or access its functionality.
+
+<IssueLink issue="141"></IssueLink>
 
 ```typescript
 new Listr<Ctx>(
@@ -106,7 +112,8 @@ new Listr<Ctx>(
               title: 'This is a subtask.',
               task: async (): Promise<void> => {
                 await delay(3000)
-                parent.title = 'I am changing title from subtask.'
+
+                parent.title = 'I am changing the title from subtask.'
               }
             },
             {
