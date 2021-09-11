@@ -2,7 +2,7 @@
 title: Handling Errors
 description: 'Throwing errors from a task. and handling them'
 category: General Usage
-position: 102
+position: 103
 ---
 
 ## Introduction
@@ -143,39 +143,23 @@ task = new Listr<Ctx>(
 )
 ```
 
-## Error Collection <badge>v2.0.0+</badge>
-
-All errors will be collected whether `exitOnError` is `true` or `false`. Errors will be thrown depending on `exitOnError: true`, otherwise it will just be collected.
-
-```typescript
-const task = new Listr(...)
-logger.fail(task.err)
-// will show all of the errors that are encountered through execution
-```
-
-### ListrError[] Structure In Collection
-
-```typescript
-public message: string
-public errors?: Error[]
-public context?: any
-```
-
 ## Renderer
 
 ### Default Renderer
 
 ```typescript
-  /**
-   * collapse error messages in to single message in task title
-   * @default true
-   */
-  collapseErrors?: boolean
-  /**
-   * shows the thrown error message or show the original title of the task, this will also disable collapseErrors mode
-   * You can disable showing the error messages, eventhough you passed in a message by settings this option,
-   * if you want to keep the original task title intacted.
-   * @default true
-   */
-  showErrorMessage?: boolean
+/**
+ * shows the thrown error message or show the original title of the task, this will also disable collapseErrors mode
+ * You can disable showing the error messages, even though you passed in a message by settings this option,
+ * if you want to keep the original task title intact.
+ *
+ * @default true
+ */
+showErrorMessage?: boolean
+/**
+ * collapse error messages into a single message and overwrite the task title
+ *
+ * @default true
+ */
+collapseErrors?: boolean
 ```

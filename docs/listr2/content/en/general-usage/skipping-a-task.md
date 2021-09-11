@@ -2,18 +2,20 @@
 title: Skipping a Task
 description: 'Skip a task depending on variables.'
 category: General Usage
-position: 105
+position: 106
 ---
 
 ## Introduction
 
-Skip is more or less the same with enabling when used at `Task` level. But the main difference is it will always render the given task. If it is skipped it renders it as skipped.
+Skip is another way of enabling a task depending on the given context. But the main difference with enable is it will always render the given task. When the execution time comes and it turns out that it should be skipped, it will render it as skipped.
 
 <alert type="warning">
 
 Please pay attention to asynchronous operation while designing a context-enabled task list since it does not wait for any variable in the context.
 
 </alert>
+
+## Usage
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/task-skip.example.ts', name: 'examples section' }"></ExampleAlert>
 
@@ -60,26 +62,25 @@ new Listr<Ctx>(
 ### Default Renderer
 
 ```typescript
-  /**
-   * collapse skip messages into single message and override the task title
-   * @default true
-   */
-  collapseSkips?: boolean
-  /**
-   * show skip messages or show the original title of the task, this will also disable collapseSkips mode
-   *
-   * You can disable showing the skip messages, even though you passed in a message by settings this option,
-   * if you want to keep the original task title intact.
-   * @default true
-   */
-  showSkipMessage?: boolean
-  /**
-   * suffix skip messages with [SKIPPED] when in collapseSkips mode
-   * @default true
-   */
-  suffixSkips?: boolean
-  /**
-   * collapse error messages into single message in the task title
-   * @default true
-   */
+/**
+ * show skip messages or show the original title of the task, this will also disable collapseSkips mode
+ *
+ * You can disable showing the skip messages, even though you passed in a message by settings this option,
+ * if you want to keep the original task title intact.
+ *
+ * @default true
+ */
+showSkipMessage?: boolean
+/**
+ * collapse skip messages into a single message and overwrite the task title
+ *
+ * @default true
+ */
+collapseSkips?: boolean
+/**
+ * suffix skip messages with [SKIPPED] when in collapseSkips mode
+ *
+ * @default true
+ */
+suffixSkips?: boolean
 ```

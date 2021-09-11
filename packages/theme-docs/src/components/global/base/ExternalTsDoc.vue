@@ -35,7 +35,7 @@ export default defineComponent({
     },
     pick: {
       type: String,
-      default: 'Methods,Properties'
+      default: 'Methods,Properties,Enumeration members'
     }
   },
   setup (props) {
@@ -48,7 +48,12 @@ export default defineComponent({
 
     const markdown = useStatic(
       async () => {
-        const res = await $axios.get(props.src)
+        let res
+        try {
+          res = await $axios.get(props.src)
+        } catch {
+          return
+        }
 
         if (res.status !== 200) {
           return

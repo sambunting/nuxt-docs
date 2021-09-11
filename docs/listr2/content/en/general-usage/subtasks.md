@@ -7,11 +7,13 @@ position: 100
 
 ## Introduction
 
-Any task can return a new Listr. But rather than calling it `new Listr` to get the full auto-completion features depending on the parent task's selected renderer, it is a better idea to call it through the `Task` itself by `task.newListr()`.
+Any task can return a new Listr. But rather than calling it by invoking `new Listr` to get the full auto-completion features depending on the parent task's selected renderer, it is a better idea to call it through the `Task` itself by `task.newListr()`.
 
 Subtasks can be nested indefinitely as long as the terminal width is enough to support them.
 
 Subtasks give the advantage of grouping similar tasks together, changing the behavior of listr for a certain set of tasks, or cleaning up the rendering area when certain tasks have finished.
+
+## Usage
 
 ```typescript
 new Listr<Ctx>(
@@ -98,7 +100,7 @@ new Listr<Ctx>(
 
 You can access the parent task class from subtasks via passing the function signature `(parent) => Listr` to `task.newListr`. This way you can change the title of the parent task or access its functionality.
 
-<IssueLink issue="141"></IssueLink>
+<GithubIssueLink issue="141"></GithubIssueLink>
 
 ```typescript
 new Listr<Ctx>(
@@ -114,12 +116,6 @@ new Listr<Ctx>(
                 await delay(3000)
 
                 parent.title = 'I am changing the title from subtask.'
-              }
-            },
-            {
-              title: 'This is an another subtask.',
-              task: async (): Promise<void> => {
-                await delay(2000)
               }
             }
           ],

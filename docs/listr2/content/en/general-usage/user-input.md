@@ -2,7 +2,7 @@
 title: User Input
 description: 'You can interact with the user with prompts.'
 category: General Usage
-position: 106
+position: 107
 ---
 
 ## Introduction
@@ -15,25 +15,25 @@ Attention: Enquirer is an optional dependency. Please install it first.
 
 </alert>
 
-So with running a `task.prompt` function, you can get access to any [enquirer](https://www.npmjs.com/package/enquirer) default prompts as well as using a custom enquirer prompt.
+So with running a `task.prompt` function, you can get access to any [enquirer](https://www.npmjs.com/package/enquirer) default prompts as well as the underlying instance for using a custom enquirer prompt.
 
-To get an input you can assign the task a new prompt in an async function and write the response to the context.
+To get an input from the user you can assign the task a new prompt in an async function and write the response to the context.
 
-<alert type="warning">
+<alert type="danger">
 
-It is not advisable to run prompts in a concurrent task because multiple prompts will clash and overwrite each other's console output and when you do keyboard movements it will apply to them both.
+It is not advised to run prompts in a concurrent tasks because multiple prompts will clash and overwrite each other's console output and when you do keyboard movements it will apply to them both.
 
 </alert>
 
-Prompts, since their rendered output gets passed as a data output will render multiple times in verbose renderer since verbose renderer is not terminal-updating intended to be used in non TTY environments. It will work anyhow albeit it might not look great. Since prompts are not even intended for non TTY terminals, this is a novelty.
+Prompts, since their rendered output gets passed as a data output will render multiple times in verbose renderer since verbose renderer is not updating the terminal is not intended to be used in non TTY environments. It will work anyhow albeit it might not look great. Since prompts are not even intended for non TTY terminals, this is a novelty.
 
 Prompts can either have a title or not but they will always be rendered at the end of the current console while using the default renderer.
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/get-user-input.example.ts', name: 'examples section' }"></ExampleAlert>
 
-## Create a Prompt
+## Usage
 
-To access the prompts just utilize the `task.prompt` jumper function. The first argument takes in one of the default [enquirer](https://www.npmjs.com/package/enquirer) prompts as a string or you can also pass in a custom [enquirer](https://www.npmjs.com/package/enquirer) prompt class as well, while the second argument is the options for the given prompt.
+To access the prompts just utilize the `task.prompt` jumper function by passing in your [enquirer](https://www.npmjs.com/package/enquirer) prompts as an argument.
 
 Prompts always rendered at the bottom of the tasks when using the default renderer with one line return in between it and the tasks.
 
@@ -98,9 +98,9 @@ new Listr<Ctx>(
 )
 ```
 
-## Use a Custom Prompt
+### Use a Custom Prompt
 
-You can either use a custom prompt out of the npm registry or a custom-created one as long as it works with [enquirer](https://www.npmjs.com/package/enquirer), it will work expectedly. Instead of passing in the prompt name use the not-generated class.
+You can either use a custom prompt out of the npm registry or a custom-created one as long as it works with [enquirer](https://www.npmjs.com/package/enquirer), it will work as expected. Instead of passing in the prompt name use the not-new-invoked class.
 
 ```typescript
 import Enquirer from 'enquirer'
@@ -132,6 +132,8 @@ new Listr<Ctx>(
 ## Cancel a Prompt <badge>v3.1.0+</badge>
 
 You can cancel a prompt while it's display with the task's provided `cancelPrompt` function.
+
+<GithubIssueLink issue="173"></GithubIssueLink>
 
 ```typescript
 import delay from 'delay'
