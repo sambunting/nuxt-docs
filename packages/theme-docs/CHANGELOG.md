@@ -1,3 +1,9 @@
+# @cenk1cenk2/nuxt-content-theme-docs [2.2.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.1.0...@cenk1cenk2/nuxt-content-theme-docs@2.2.0) (2021-09-12)
+
+### Features
+
+- add external issue and issue link, update some documentation ([de95549](https://github.com/cenk1cenk2/nuxt-docs/commit/de955491bed99eb32c3ab228dcc6187a6ae083ca))
+
 # @cenk1cenk2/nuxt-content-theme-docs [2.1.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.0.3...@cenk1cenk2/nuxt-content-theme-docs@2.1.0) (2021-09-07)
 
 ### Features
