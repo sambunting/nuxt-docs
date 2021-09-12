@@ -71,7 +71,7 @@ try {
 
 ## Options
 
-Rollback by default is to throw an exception and stop the execution of the upcoming tasks. But this can be overwritten by `{ exitAfterRollback: false }` option. This is the main Listr option that acts indifferent to the `exitOnError`.
+Rollback, when it fails by default, throws an exception and stops the execution of the upcoming tasks. But this can be overwritten by `{ exitAfterRollback: false }` option. This is the main Listr option that acts independently of `exitOnError` since failing the rollback might have worse consequences.
 
 ## Renderer
 

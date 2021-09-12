@@ -3,7 +3,6 @@ title: Testing
 description: 'For testing you can use a custom or the verbose renderer.'
 category: Generic Features
 position: 303
-fullscreen: true
 ---
 
 For testing purposes you can use the verbose renderer by passing in the option of `{ renderer: 'verbose' }`. This will generate text-based and linear output which is required for testing.

@@ -3,8 +3,9 @@ title: More Functionality
 description: 'More functionality of task manager.'
 category: Task Manager
 position: 202
-fullscreen: true
 ---
+
+## Indenting Tasks
 
 - Indenting tasks, to change options like `concurrency`, `exitOnError` and so on.
 
@@ -42,6 +43,8 @@ this.tasks.add(
 )
 ```
 
+## Run Directly from Manager
+
 - Run a Task Directly, which will use the defaults settings you set in the manager.
 
 ```typescript
@@ -55,7 +58,10 @@ await this.tasks.run([
 ])
 ```
 
+## Accesing Collected Errors
+
 - Access the errors of the last task as in the Listr.
+- Will only show the last set of errors in the latest task.
 
 ```typescript
 await this.tasks.run([
@@ -67,7 +73,6 @@ await this.tasks.run([
   }
 ])
 this.logger.data(this.tasks.err.toString())
-// will yield: ListrError: Task failed without crashing. with the error details in the object
 ```
 
 - Access base Listr class directly, this will use the default Listr settings and just a mere jumper function for omitting the need the import the Listr class when using manager.
@@ -77,7 +82,7 @@ try {
   await this.tasks
     .newListr([
       {
-        title: 'I will die now, goodbye my freinds.',
+        title: 'I will die now, goodbye my friends.',
         task: (): void => {
           throw new Error('This will not crash since exitOnError is set to false eventhough default setting in Listr is false.')
         }
@@ -87,36 +92,4 @@ try {
 } catch (e) {
   this.logger.fail(e)
 }
-```
-
-- Get Task Runtime, and tailor it as your own <badge>deprecated</badge>
-
-<alert info="info">
-
-Default renderer now has a function to write the execute time aside of the task, which servers what this does mostly.
-
-</alert>
-
-```typescript
-await this.tasks.run(
-  [
-    {
-      task: async (ctx): Promise<void> => {
-        // start the clock
-        ctx.runTime = Date.now()
-      }
-    },
-    {
-      title: 'Running',
-      task: async (): Promise<void> => {
-        await delay(1000)
-      }
-    },
-    {
-      task: async (ctx, task): Promise<string> => (task.title = this.tasks.getRuntime(ctx.runTime))
-    }
-  ],
-  { concurrent: false }
-)
-// outputs: "1.001s" in seconds
 ```

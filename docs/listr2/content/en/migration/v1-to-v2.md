@@ -1,9 +1,9 @@
 ---
-title: From v1
+title: v1 to v2
 description: 'Migration guide for breaking changes.'
 category: Migration
 position: 1000
-fullscreen: true
+badge: v2.0.0+
 ---
 
 To migrate from prior versions that are older than v1.3.12, which is advisable due to upcoming potential bug fixes:
