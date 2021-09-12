@@ -33,8 +33,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.4",
-    "@cenk1cenk2/cz-cc": "^1.4.3",
+    "@babel/preset-env": "^7.15.6",
+    "@cenk1cenk2/cz-cc": "^1.4.4",
     "@cenk1cenk2/eslint-config": "^0.4.46",
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",

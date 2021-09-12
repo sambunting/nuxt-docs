@@ -2,13 +2,17 @@
 title: Retry
 description: 'Retrying a task after it fails'
 category: General Usage
-position: 13
+position: 108
 badge: v3.4.0+
 ---
 
 ## Introduction
 
-If you want to retry a task that had failed a couple of times more, you can use the `retry` property in the `Task`. Related issue is [#303](https://github.com/cenk1cenk2/listr2/issues/303).
+If you want to retry a task that had failed a couple of times more, you can use the `retry` property in the `Task`.
+
+<GithubIssueLink issue="303"></GithubIssueLink>
+
+## Usage
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/retry.example.ts', name: 'examples section' }"></ExampleAlert>
 
@@ -43,7 +47,7 @@ try {
 }
 ```
 
-## Access via Task
+## Details of the Retry Event
 
 Retrying is self-aware and you can access from the task if it is retrying via `task.isRetrying()`. It will either return an object of `count: number, withError: any` where `count` will be `0` for not repeating tasks, and `withError` is the last encountered error if retrying.
 
@@ -111,6 +115,7 @@ When retrying, the task title will be reset to the original task title and the o
 ```typescript
 /**
  * suffix retry messages with [RETRY-${COUNT}] when retry is enabled for a task
+ *
  * @default true
  */
 suffixRetries?: boolean

@@ -1,18 +1,23 @@
 ---
-title: Enable a Task
+title: Enabling a Task
 description: 'Enable a task depending on variables.'
 category: General Usage
-position: 9
-fullscreen: true
+position: 105
 ---
 
-Tasks can be enabled depending on the variables programmatically. This enables to skip them depending on the context. Not enabled tasks will never show up in the default renderer, but when or if they get enabled they will magically appear.
+## Introduction
+
+Tasks can be enabled depending on the variables programmatically. This enables to create of tasks that are dependent on the context.
 
 <alert type="warning">
 
-Task enabling is determined up on the initial run of the Listr when you actually create the class for a given subtask, so be careful with using it while using internal context variables.
+Task enabling is determined upon the initial run of the Listr when you actually create the class for a given subtask, so be careful with using it while using internal context variables.
+
+After that when the execution time comes for the given task, it will get re-evaluated.
 
 </alert>
+
+## Usage
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/task-enable.example.ts', name: 'examples section' }"></ExampleAlert>
 
@@ -35,3 +40,9 @@ new Listr<Ctx>(
   { concurrent: false }
 )
 ```
+
+## Renderer
+
+### Default Renderer
+
+- Not enabled tasks will not be renderer in the default renderer.

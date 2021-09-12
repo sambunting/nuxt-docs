@@ -7,15 +7,19 @@ position: 5
 
 ## Context Variable
 
-Context is the parent object of the variables that are shared across the task list. Even though external variables can be used to do the same operation, context gives a self-contained way to process internal tasks.
+Context is an object that is shared across the task list. Even though external variables can be used to do the same operation, context gives a self-contained way to process internal tasks.
 
-A successful task will return the context back for further operation.
+- A successful task will return the context back for further operation.
+- Context is manipulated through the main listr class as `tasks.ctx` where `tasks` is a listr task list.
+- If an error is encountered, the context at the time will be recorded as a frozen object to give the ability to further debug the issue.
 
-You can also manually inject a context variable preset depending on the prior operations through the task options.
+You can also manually inject a context variable defaults through multiple ways.
 
-**If all tasks are in one big Listr list you do not have to inject context manually to the child tasks since it is automatically injected as in the original.**
+**If all tasks are in the same listr you do not have to inject context manually to the subtasks since it is automatically injected as in the original.**
 
-### Injection Context as an Option
+## Injecting Context
+
+### Injecting Context as an Option
 
 ```typescript
 const ctx: Ctx = {}
@@ -40,8 +44,6 @@ try {
 
 ## Retrieving Context
 
-Context can be retrieved back in two ways.
-
 ### As a Result of the Task
 
 A successful task will always return the context.
@@ -60,7 +62,7 @@ const ctx = await tasks.run()
 console.log(ctx.test) // true
 ```
 
-### As Class Object
+### As Class Property
 
 The root `listr` class itself holds the context value.
 

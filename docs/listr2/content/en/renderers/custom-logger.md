@@ -2,8 +2,7 @@
 title: Custom Logger
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 24
-fullscreen: true
+position: 407
 ---
 
 Logging to a file can be done utilizing a module like [winston](https://www.npmjs.com/package/winston). This can be obtained through using the verbose renderer and creating a custom logger class that implements `Logger` which is exported from the index.

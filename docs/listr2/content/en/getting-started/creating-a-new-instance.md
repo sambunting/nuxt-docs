@@ -7,7 +7,7 @@ position: 3
 
 ## Generate New Class
 
-Create a new task list. It will return a Listr class.
+Create a new task list from the constructor. It will return a Listr class.
 
 ```typescript
 import { Listr } from 'listr2'
@@ -28,14 +28,12 @@ const tasks = new Listr<Ctx>(
 
 ## Run the Generated Task List
 
-Then you can run this task lists as an async function and it will return the context that is used.
+Then you can run this task list as an async function and it will return the context that is used.
 
 ```typescript
 try {
   await tasks.run()
 } catch (e) {
-  // it will collect all the errors encountered if { exitOnError: false } is set as an option but will not throw them
-  // elsewise it will throw the first error encountered as expected
   console.error(e)
 }
 ```

@@ -2,7 +2,7 @@
 title: Verbose Renderer
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 21
+position: 404
 ---
 
 ## Introduction
@@ -11,34 +11,8 @@ Verbose renderer is the default non TTY environment renderer and will be used as
 
 ## Global Options
 
-```typescript
-public static rendererOptions: {
-    /**
-     * useIcons instead of text for log level
-     * @default false
-     */
-    useIcons?: boolean
-    /**
-     * inject a custom loger
-     */
-    logger?: new (...args: any) => Logger
-    /**
-     * log tasks with empty titles
-     * @default true
-     */
-    logEmptyTitle?: boolean
-    /**
-     * log title changes
-     * @default true
-     */
-    logTitleChange?: boolean
-    /**
-     * show duration for all tasks
-     */
-    showTimer?: boolean
-  } = {
-    useIcons: false,
-    logEmptyTitle: true,
-    logTitleChange: true
-  }
-```
+<ExternalTsDoc src="https://raw.githubusercontent.com/cenk1cenk2/listr2/master/docs/classes/renderer_verbose_renderer.VerboseRenderer.md" behead="0" pick="rendererOptions"></ExternalTsDoc>
+
+## Per-Task Options
+
+<ExternalTsDoc src="https://raw.githubusercontent.com/cenk1cenk2/listr2/master/docs/classes/renderer_verbose_renderer.VerboseRenderer.md" behead="0" pick="rendererTaskOptions"></ExternalTsDoc>

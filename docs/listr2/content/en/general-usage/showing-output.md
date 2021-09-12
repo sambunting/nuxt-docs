@@ -2,12 +2,18 @@
 title: Showing Output
 description: 'Showing output from a task.'
 category: General Usage
-position: 10
+position: 102
 ---
+
+## Introduction
+
+For creating a more interactive experience for the user, an output from the given task can be shown. Output is a separate entity compared to the title.
 
 <ExampleAlert :example="{ link: 'https://github.com/cenk1cenk2/listr2/tree/master/examples/show-output.example.ts', name: 'examples section' }"></ExampleAlert>
 
-## Show Output Through the Task Itself
+## Usage
+
+### Show Output Through the Task Itself
 
 This will show the output in a small bar that can only show the last output from the task.
 
@@ -32,7 +38,7 @@ new Listr<Ctx>(
 )
 ```
 
-## Passing Data Through an Observable or a Stream
+### Passing Data Through an Observable or a Stream
 
 Since observables and streams are supported they can also be used to generate output.
 
@@ -63,7 +69,7 @@ new Listr<Ctx>(
 )
 ```
 
-## Accessing `process.stdout` to Render a Stream <badge>v2.1.0+</badge>
+## Accessing `process.stdout` to Render a Stream Directly <badge>v2.1.0+</badge>
 
 Since `process.stdout` method is controlled by `log-update` to create a refreshing interface, for anything else that might need to output data and can use `Writeable` streams, `task.stdout()` will create a new punch-hole to redirect all the write requests to `task.output`. This is especially beneficial for external libraries like `enquirer`, which is already integrated, or something like `ink`.
 
@@ -72,6 +78,8 @@ Since `process.stdout` method is controlled by `log-update` to create a refreshi
 This, unfortunately, relies on cleaning all ANSI escape characters, since currently, I do not find a good way to sandbox them inside `log-update` which utilizes the cursor position by itself. So use this with caution, because it will only render the last chunk in a stream as well as clean up all the ANSI escape characters except for styles.
 
 </alert>
+
+<GithubIssueLink issue="31"></GithubIssueLink>
 
 ```typescript
 import { Box, Color, render } from 'ink'
@@ -136,7 +144,7 @@ main()
 
 #### Persistent Output
 
-To keep the output when the task finishes while using the default renderer, you can set `{ persistentOutput: true }` in the `Task` options.
+To keep the output after the task has been completed while using the default renderer, you can set `{ persistentOutput: true }` in the `Task` options.
 
 ```typescript
 new Listr<Ctx>(
@@ -155,7 +163,7 @@ new Listr<Ctx>(
 
 #### Use the Bottom Bar
 
-If task output to the bottom bar is selected, it will create a bar at the end of the tasks leaving one line return space in between. The bottom bar can only be used in the default renderer.
+If task output to the bottom bar is selected, it will create a bar at the end of the tasks leaving one line return space in between.
 
 Items count that is desired to be showed in the bottom bar can be set through `Task` option `bottomBar`.
 

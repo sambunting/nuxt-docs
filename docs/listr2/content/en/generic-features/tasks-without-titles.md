@@ -1,9 +1,8 @@
 ---
 title: Tasks without Title
-description: 'You can have tasks without title if you wish to.'
+description: 'You can have tasks without a title if you wish to.'
 category: Generic Features
-position: 24
-fullscreen: true
+position: 301
 ---
 
 For default renderer, all tasks that do not have titles will be hidden from the visual task list and executed behind. You can still set `task.title` inside the task wrapper programmatically afterward if you so desire.

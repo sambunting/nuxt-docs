@@ -1,17 +1,22 @@
 ---
 title: Renderer Fallback Condition
-description: 'The renderer that comes bundled with listr can be further customized.'
+description: 'Renderer can fallback to non-tty renderer or silent renderer with passing a simple evaluation function.'
 category: Renderers
-position: 18
-fullscreen: true
+position: 401
 badge: v2.3.0+
 ---
+
+## Introduction
 
 There are times other than non TTY environments that you want to use a verbose renderer instead of the default renderer.
 
 For these times you needed to create a `getRenderer` kind of method and return the renderer value to the renderer. But with the added complexity of the types, it is a bit more buggy to show it returns `default` for auto-complete purposes.
 
 You can now pass in a function that returns a boolean, or directly a boolean for automatically stepping down to the `nonTTYRenderer` when the condition is met.
+
+## Usage
+
+### Non-TTY Renderer Fallback
 
 ```typescript
 task = new Listr<Ctx>(
@@ -27,6 +32,8 @@ task = new Listr<Ctx>(
   { concurrent: false, rendererFallback: (): boolean => 3 < 1 }
 )
 ```
+
+### Silent Renderer Fallback
 
 This is also true if you want to get the silent renderer directly. But this time you have to pass in `rendererSilent` variable to the options.
 

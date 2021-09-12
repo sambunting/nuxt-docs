@@ -1,8 +1,8 @@
 ---
-title: Create Your Renderer
+title: Create Your Own Renderer
 description: 'The renderer that comes bundled with listr can be further customized.'
 category: Renderers
-position: 23
+position: 406
 ---
 
 ## Introduction
@@ -33,7 +33,7 @@ export class MyAmazingRenderer implements ListrRenderer {
 }
 ```
 
-## Utilizing the task functions themselves
+## Utilizing the Task functions themselves
 
 Take a look at [default renderer](https://github.com/cenk1cenk2/listr2/tree/master/src/renderer/default.renderer.ts) since it is implemented this way.
 

@@ -1,7 +1,7 @@
 ---
 title: listr2
 description: 'Create beautiful CLI interfaces via easy and logical to implement task lists that feel alive and interactive.'
-position: 1
+position: 0
 fullscreen: true
 features:
   - Beautiful

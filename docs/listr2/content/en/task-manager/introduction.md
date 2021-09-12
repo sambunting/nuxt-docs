@@ -2,8 +2,7 @@
 title: Introduction
 description: 'Introduction to task manager.'
 category: Task Manager
-position: 13
-fullscreen: true
+position: 200
 ---
 
 Task manager is a great way to create a custom-tailored Listr class once and then utilize it more than once.
