@@ -16,11 +16,10 @@ import { getDefaults, processMarkdownOptions } from '@nuxt/content/lib/utils'
 import Markdown from '@nuxt/content/parsers/markdown'
 import { defineComponent, useContext, useStatic, computed } from '@nuxtjs/composition-api'
 import md5 from 'md5'
-import * as path from 'path-browserify'
-import rehypeUrls from 'rehype-urls'
 import remarkBehead from 'remark-behead'
 import remarkUnlink from 'remark-unlink'
 import findAfter from 'unist-util-find-after'
+// eslint-disable-next-line import/default
 import visitParents from 'unist-util-visit-parents'
 
 export default defineComponent({
@@ -38,7 +37,7 @@ export default defineComponent({
       default: 'Methods,Properties,Enumeration members'
     }
   },
-  setup (props) {
+  setup(props) {
     const behead = parseInt(props.behead, 10)
     const pick = props.pick.split(',')
 
@@ -74,8 +73,8 @@ export default defineComponent({
 
         // remove unnessary plugins
         options.markdown.remarkPlugins = options.markdown.remarkPlugins.reduce((o, plugin) => {
-          if (![ 'remark-autolink-headings', 'remark-slug' ].includes(plugin.name)) {
-            return [ ...o, plugin ]
+          if (!['remark-autolink-headings', 'remark-slug'].includes(plugin.name)) {
+            return [...o, plugin]
           }
 
           return o
@@ -99,13 +98,13 @@ export default defineComponent({
               for (let depth = 6; depth > 0; depth--) {
                 visitParents(
                   tree,
-                  node => node.type === 'heading' && node.depth === depth,
+                  (node) => node.type === 'heading' && node.depth === depth,
                   (node, ancestors) => {
                     const start = node
                     const depth = start.depth
                     const parent = ancestors[ancestors.length - 1]
 
-                    const isEnd = node => (node.type === 'heading' && node.depth <= depth) || node.type === 'export'
+                    const isEnd = (node) => (node.type === 'heading' && node.depth <= depth) || node.type === 'export'
                     const end = findAfter(parent, start, isEnd)
 
                     const startIndex = parent.children.indexOf(start)
@@ -114,14 +113,14 @@ export default defineComponent({
                     const between = parent.children.slice(startIndex, endIndex > 0 ? endIndex : undefined)
 
                     const firstChild = between?.[0]?.children
-                    if (firstChild && firstChild.some(child => pick.includes(child.value))) {
+                    if (firstChild && firstChild.some((child) => pick.includes(child.value))) {
                       sections.push(between)
                     }
                   }
                 )
               }
 
-              tree.children = sections.flatMap(i => i)
+              tree.children = sections.flatMap((i) => i)
             }
           })
         }
