@@ -125,7 +125,6 @@ export default defineComponent({
 .DocSearch {
   --docsearch-primary-color: var(--color-primary-500);
   --docsearch-highlight-color: var(--docsearch-primary-color);
-
   --docsearch-text-color: var(--color-gray-700);
   --docsearch-modal-background: var(--color-gray-100);
   --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);

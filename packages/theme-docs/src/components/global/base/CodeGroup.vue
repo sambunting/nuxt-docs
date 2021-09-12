@@ -74,11 +74,13 @@ button {
 
 .highlight-underline {
   @apply bg-primary-500 absolute;
+
   bottom: -2px;
   height: 2px;
   transition: left 150ms, width 150ms;
 }
 
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
 .code-group ::v-deep {
   & pre[class*='language-'] {
     @apply rounded-t-none mt-0;

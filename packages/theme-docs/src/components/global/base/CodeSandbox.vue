@@ -56,6 +56,7 @@ export default defineComponent({
 .codesandbox,
 .codesandbox iframe {
   @apply w-full rounded-md overflow-hidden h-64;
+
   height: 500px;
 }
 </style>

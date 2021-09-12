@@ -54,18 +54,22 @@ export default defineComponent({
 .list-primary {
   @apply text-primary-500;
 }
+
 /* Info */
 .list-info {
   @apply text-blue-500;
 }
+
 /* Success */
 .list-success {
   @apply text-green-500;
 }
+
 /* Warning */
 .list-warning {
   @apply text-orange-500;
 }
+
 /* Danger */
 .list-danger {
   @apply text-red-500;
