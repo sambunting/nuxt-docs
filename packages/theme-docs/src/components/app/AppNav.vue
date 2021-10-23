@@ -1,10 +1,10 @@
 <template>
   <aside
-    class="w-full lg:w-1/5 lg:block fixed lg:relative inset-0 mt-16 lg:mt-0 z-30 bg-white dark:bg-gray-900 lg:bg-transparent lg:dark:bg-transparent"
+    class="fixed inset-0 z-30 mt-16 w-full bg-white lg:block lg:relative lg:mt-0 lg:w-1/5 lg:bg-transparent dark:bg-gray-900 lg:dark:bg-transparent"
     :class="{ block: menu, hidden: !menu }"
   >
     <div class="lg:sticky lg:top-16 overflow-y-auto h-full lg:h-auto lg:max-h-(screen-16)">
-      <ul class="p-4 lg:py-8 lg:pl-0 lg:pr-8">
+      <ul class="p-4 lg:py-8 lg:pr-8 lg:pl-0">
         <li v-if="!settings.algolia" class="mb-4 lg:hidden">
           <AppSearch />
         </li>
@@ -17,24 +17,24 @@
             'lg:mb-0': index === Object.keys(categories).length - 1
           }"
         >
-          <p v-if="category" class="mb-2 text-gray-600 dark:text-gray-400 uppercase tracking-wider font-bold">{{ category }}</p>
+          <p v-if="category" class="mb-2 font-bold tracking-wider text-gray-600 uppercase dark:text-gray-400">{{ category }}</p>
           <ul>
             <li v-for="doc of docs" :key="doc.slug" class="text-gray-700 dark:text-gray-300">
               <NuxtLink
                 :to="localePath(doc.to)"
-                class="px-2 rounded font-medium py-1 hover:text-primary-500 flex items-center justify-between"
-                exact-active-class="text-primary-500 bg-gray-200 hover:text-primary-500 dark:bg-gray-800"
+                class="flex justify-between items-center py-1 px-2 font-medium rounded hover:text-primary-500"
+                exact-active-class="bg-gray-200 dark:bg-gray-800 text-primary-500 hover:text-primary-500"
               >
                 {{ doc.menuTitle || doc.title }}
                 <client-only>
-                  <span v-if="isDocumentNew(doc)" class="animate-pulse rounded-full bg-primary-500 opacity-75 h-2 w-2" />
+                  <span v-if="isDocumentNew(doc)" class="w-2 h-2 rounded-full opacity-75 animate-pulse bg-primary-500" />
                 </client-only>
               </NuxtLink>
             </li>
           </ul>
         </li>
-        <li class="lg:hidden space-x-2">
-          <p class="mb-2 text-gray-500 uppercase tracking-wider font-bold">More</p>
+        <li class="space-x-2 lg:hidden">
+          <p class="mb-2 font-bold tracking-wider text-gray-500 uppercase">More</p>
           <AppIcons />
         </li>
       </ul>

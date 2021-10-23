@@ -1,6 +1,6 @@
 <template>
-  <footer class="h-16 relative w-full border-t dark:border-gray-800 bg-white dark:bg-gray-900 z-20">
-    <div class="h-full w-full lg:container mx-auto px-4 lg:px-8 flex items-center justify-between">
+  <footer class="relative z-20 w-full h-16 bg-white border-t dark:bg-gray-900 dark:border-gray-800">
+    <div class="flex justify-between items-center px-4 mx-auto w-full h-full lg:container lg:px-8">
       <div class="flex items-end">
         <a href="https://nuxtjs.org" target="_blank" rel="noopener">
           <BuiltWithNuxtLight class="h-4 light-img" />
@@ -13,10 +13,10 @@
           rel="noopener noreferrer"
           title="kilic.dev"
           name="kilic.dev"
-          class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark-hover:text-primary-500 ml-4"
+          class="ml-4 text-gray-700 dark:text-gray-300 dark-hover:text-primary-500 hover:text-primary-500"
         >
-          <span class="rounded-lg bg-gray-200 dark:bg-gray-800 p-1">
-            <FontAwesomeIcon :icon="fa.faTerminal" class="text-primary-500 text-lg pt-1" />
+          <span class="p-1 bg-gray-200 rounded-lg dark:bg-gray-800">
+            <FontAwesomeIcon :icon="fa.faTerminal" class="pt-1 text-lg text-primary-500" />
           </span>
           <span class="text-xl ml-1/2">kilic.dev</span>
         </a>

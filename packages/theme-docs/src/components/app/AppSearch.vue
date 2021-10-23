@@ -1,16 +1,16 @@
 <template>
-  <div class="w-full relative flex flex-col justify-between">
-    <div class="w-full relative" @keydown.down="increment" @keydown.up="decrement" @keydown.enter="go">
+  <div class="flex relative flex-col justify-between w-full">
+    <div class="relative w-full" @keydown.down="increment" @keydown.up="decrement" @keydown.enter="go">
       <label for="search" class="sr-only">Search</label>
       <div class="relative">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <IconSearch class="h-5 w-5 text-gray-500" />
+        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <IconSearch class="w-5 h-5 text-gray-500" />
         </div>
         <input
           id="search"
           ref="search"
           v-model="q"
-          class="block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-gray-500 dark:text-white dark-focus:text-white focus:border-gray-300 dark-focus:border-gray-700 rounded-md focus:outline-none focus:bg-white dark-focus:bg-gray-900 bg-gray-200 dark:bg-gray-700"
+          class="block py-2 pr-3 pl-10 w-full leading-5 placeholder-gray-500 text-gray-500 bg-gray-200 rounded-md border border-transparent dark:text-white dark:bg-gray-700 focus:bg-white focus:border-gray-300 focus:outline-none truncate dark-focus:text-white dark-focus:border-gray-700 dark-focus:bg-gray-900"
           :class="{ 'rounded-b-none': focus && (searching || results.length) }"
           :placeholder="$t('search.placeholder')"
           type="search"
@@ -22,22 +22,22 @@
     </div>
     <ul
       v-show="focus && (searching || results.length)"
-      class="z-10 absolute w-full flex-1 top-0 bg-white dark:bg-gray-900 rounded-md border border-gray-300 dark:border-gray-700 overflow-hidden"
+      class="overflow-hidden absolute top-0 z-10 flex-1 w-full bg-white rounded-md border border-gray-300 dark:bg-gray-900 dark:border-gray-700"
       :class="{ 'rounded-t-none': focus && (searching || results.length) }"
       style="margin-top: 37px"
     >
-      <li v-if="searching && !results.length" class="px-4 py-2">Searching...</li>
+      <li v-if="searching && !results.length" class="py-2 px-4">Searching...</li>
       <li v-for="(result, index) of results" :key="result.slug" @mouseenter="focusIndex = index" @mousedown="go">
         <NuxtLink
           :to="localePath(result.to)"
-          class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150"
+          class="flex items-center py-2 px-4 leading-5 transition duration-150 ease-in-out"
           :class="{
             'text-primary-500 bg-gray-200 dark:bg-gray-800': focusIndex === index
           }"
           @click="focus = false"
         >
           <span v-if="result.category" class="font-bold">{{ result.category }}</span>
-          <FontAwesomeIcon v-if="result.category" :icon="fa.faChevronRight" class="w-3 h-3 mx-1" />
+          <FontAwesomeIcon v-if="result.category" :icon="fa.faChevronRight" class="mx-1 w-3 h-3" />
           {{ result.title }}
         </NuxtLink>
       </li>

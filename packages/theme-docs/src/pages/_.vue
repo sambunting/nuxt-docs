@@ -6,14 +6,14 @@
     }"
   >
     <div
-      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      class="py-4 w-full lg:pt-8 lg:pb-4 dark:border-gray-800"
       :class="{
         'lg:w-3/4': !document.fullscreen,
         'lg:border-l lg:border-r': settings.layout !== 'single'
       }"
     >
-      <article class="prose dark:prose-dark max-w-none lg:px-8">
-        <h1 class="flex items-center justify-between">
+      <article class="max-w-none lg:px-8 prose dark:prose-dark">
+        <h1 class="flex justify-between items-center">
           {{ document.title }}
           <Badge v-if="document.badge">{{ document.badge }}</Badge>
         </h1>

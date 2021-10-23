@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-wrap-reverse">
-    <div class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r">
+    <div class="py-4 w-full lg:pt-8 lg:pb-4 lg:w-3/4 lg:border-r lg:border-l dark:border-gray-800">
       <article class="lg:px-8">
-        <h1 class="text-4xl font-black text-center text-red-500 font-semibold mb-4 leading-none">{{ error.message }}</h1>
+        <h1 class="mb-4 text-4xl font-semibold font-black leading-none text-center text-red-500">{{ error.message }}</h1>
       </article>
     </div>
   </div>

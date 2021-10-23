@@ -1,10 +1,10 @@
 <template>
-  <div class="alert border-l-4 p-4 mb-4 mt-4" :class="`alert-${type}`">
+  <div class="p-4 mt-4 mb-4 border-l-4 alert" :class="`alert-${type}`">
     <div class="flex items-start">
       <div class="flex-shrink-0">
-        <FontAwesomeIcon :icon="icon" class="alert-icon mt-px w-6 h-6" />
+        <FontAwesomeIcon :icon="icon" class="mt-px w-6 h-6 alert-icon" />
       </div>
-      <div class="flex-grow ml-2 overflow-auto alert-content">
+      <div class="overflow-auto flex-grow ml-2 alert-content">
         <slot />
       </div>
     </div>

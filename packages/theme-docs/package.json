@@ -22,7 +22,8 @@
   "scripts": {
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "lint": "yarn lint:js --fix && yarn lint:style --fix",
+    "lint:class": "rustywind --write .",
+    "lint": "yarn run lint:js --fix && yarn run lint:style --fix && yarn run lint:class",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
     "lint:staged": "lint-staged",
     "docs:toc": "markdown-toc README.md --bullets='-' -i"
@@ -30,7 +31,8 @@
   "lint-staged": {
     "./*.{ts,js,tsx,jsx,vue}": [
       "prettier --loglevel warn --write",
-      "eslint --fix"
+      "eslint --fix",
+      "rustywind --write"
     ],
     "./*.{json,md}": [
       "prettier --loglevel warn --write"
@@ -43,36 +45,36 @@
     "src"
   ],
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.40",
-    "@docsearch/js": "^3.0.0-alpha.40",
+    "@docsearch/css": "^3.0.0-alpha.41",
+    "@docsearch/js": "^3.0.0-alpha.41",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^1.15.0",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/google-fonts": "1.3.0",
-    "@nuxtjs/i18n": "^7.0.3",
+    "@nuxtjs/i18n": "^7.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^4.0.3",
     "@tailwindcss/typography": "0.4.1",
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.7",
     "clipboard": "^2.0.8",
     "consola": "^2.15.3",
     "defu": "^5.0.0",
     "execa": "^5.0.0",
-    "highlight.js": "^11.2.0",
+    "highlight.js": "^11.3.1",
     "lodash.groupby": "^4.6.0",
-    "marked": "^3.0.2",
+    "marked": "^3.0.7",
     "md5": "^2.3.0",
-    "postcss": "^8.2.10",
+    "postcss": "^8.3.11",
     "prism-theme-one-dark": "^1.0.0",
-    "prism-themes": "^1.6.0",
+    "prism-themes": "^1.9.0",
     "remark-behead": "^2.3.3",
     "remark-unlink": "^3",
-    "shiki": "^0.9.10",
+    "shiki": "^0.9.12",
     "shiki-twoslash": "^3.0.1",
     "tailwind-css-variables": "^3.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
@@ -82,7 +84,7 @@
     "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
-    "@nuxtjs/composition-api": "^0.29.0",
+    "@nuxtjs/composition-api": "^0.29.3",
     "@types/md5": "^2.3.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.19.0",

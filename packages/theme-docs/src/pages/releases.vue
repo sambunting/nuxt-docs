@@ -6,16 +6,16 @@
     }"
   >
     <div
-      class="w-full lg:w-3/4 py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      class="py-4 w-full lg:pt-8 lg:pb-4 lg:w-3/4 dark:border-gray-800"
       :class="{
         'lg:border-l lg:border-r': settings.layout !== 'single'
       }"
     >
-      <article class="prose dark:prose-dark max-w-none lg:px-8">
+      <article class="max-w-none lg:px-8 prose dark:prose-dark">
         <h1>Releases</h1>
 
         <div v-for="release of releases" :key="release.name">
-          <h2 :id="release.name" class="flex items-center justify-between">
+          <h2 :id="release.name" class="flex justify-between items-center">
             {{ release.name }}
             <span class="text-base font-normal text-gray-500">{{ formatDate(release) }}</span>
           </h2>

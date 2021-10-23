@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div v-if="githubIssue" class="alert border-l-4 p-2 mb-2 mt-2 border-gray-500 dark:bg-gray-800 bg-gray-100">
+    <div v-if="githubIssue" class="p-2 mt-2 mb-2 bg-gray-100 border-l-4 border-gray-500 dark:bg-gray-800 alert">
       <div class="flex items-start">
         <div class="flex-shrink-0">
-          <FontAwesomeIcon :icon="icons.faGithub" class="alert-icon mt-px w-6 h-6" />
+          <FontAwesomeIcon :icon="icons.faGithub" class="mt-px w-6 h-6 alert-icon" />
         </div>
-        <div class="flex-grow ml-2 overflow-auto alert-content">
+        <div class="overflow-auto flex-grow ml-2 alert-content">
           <p>
             This is related to the discussions on
-            <a :href="githubIssue.url">issue #{{ issue }}: "{{ githubIssue.title }}"</a>.
+            <a :href="githubIssue.html_url">issue #{{ issue }}: "{{ githubIssue.title }}"</a>.
           </p>
           <br />
           <p>
@@ -34,7 +34,7 @@ export default defineComponent({
       type: String
     }
   },
-  setup (props) {
+  setup(props) {
     const { $axios } = useContext()
     const store = useStore()
 
@@ -47,14 +47,11 @@ export default defineComponent({
         try {
           res = await $axios.get('https://api.github.com/repos/' + settings.github + '/issues/' + props.issue)
         } catch (err) {
+          console.error(err)
           return
         }
 
-        if (res.status !== 200) {
-          return
-        }
-
-        return res.data
+        return res
       },
       props.issue,
       props.issue

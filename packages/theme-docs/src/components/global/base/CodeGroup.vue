@@ -1,11 +1,11 @@
 <template>
   <div class="code-group">
-    <div class="rounded-t-md border-b-2 border-gray-700 px-2 bg-gray-800 text-sm text-white relative">
+    <div class="relative px-2 text-sm text-white bg-gray-800 rounded-t-md border-b-2 border-gray-700">
       <button
         v-for="({ label }, i) in tabs"
         ref="tabs"
         :key="label"
-        class="px-4 py-3 text-gray-400 font-bold font-mono"
+        class="py-3 px-4 font-mono font-bold text-gray-400"
         :class="[activeTabIndex === i && 'active']"
         @click="updateTabs(i)"
       >

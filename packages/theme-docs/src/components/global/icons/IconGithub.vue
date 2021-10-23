@@ -6,7 +6,7 @@
     rel="noopener noreferrer"
     title="Github"
     name="Github"
-    class="inline-flex text-gray-700 dark:text-gray-300 text-4xl"
+    class="inline-flex text-4xl text-gray-700 dark:text-gray-300"
   >
     <FontAwesomeIcon :icon="faGithub" class="hover:text-primary-500" />
   </a>

@@ -1,11 +1,11 @@
 <template>
-  <div class="codesandbox w-full mb-6 mx-auto bg-black text-white text-3xl text-center flex items-center justify-center overflow-hidden rounded-md">
+  <div class="flex overflow-hidden justify-center items-center mx-auto mb-6 w-full text-3xl text-center text-white bg-black rounded-md codesandbox">
     <iframe
       v-if="isIntersecting && src"
       :src="src"
       title="CodeSandbox editor"
       sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-      class="w-full overflow-hidden"
+      class="overflow-hidden w-full"
     />
     <span v-else>Loading CodeSandbox...</span>
   </div>

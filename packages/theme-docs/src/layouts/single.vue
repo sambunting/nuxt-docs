@@ -2,7 +2,7 @@
   <div class="pt-16">
     <AppHeader />
 
-    <main class="container mx-auto px-4 lg:px-8">
+    <main class="container px-4 mx-auto lg:px-8">
       <Nuxt />
     </main>
 

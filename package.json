@@ -32,10 +32,10 @@
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "@cenk1cenk2/cz-cc": "^1.4.4",
-    "@cenk1cenk2/eslint-config": "^0.4.46",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@cenk1cenk2/cz-cc": "^1.4.9",
+    "@cenk1cenk2/eslint-config": "^0.4.50",
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/eslint-config": "^6.0.0",
@@ -45,16 +45,17 @@
     "commitizen": "^4.2.3",
     "eslint": "^7.32.0",
     "lerna": "^4.0.0",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^11.2.4",
     "markdown-toc": "^1.2.0",
     "markdownlint": "^0.24.0",
-    "markdownlint-cli": "^0.28.1",
-    "prettier": "^2.2.1",
+    "markdownlint-cli": "^0.29.0",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
+    "rustywind": "^0.12.2",
     "simple-git-hooks": "^2.6.1",
-    "stylelint": "^13.12.0",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint": "^14.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^23.0.0"
   },
   "config": {
     "commitizen": {

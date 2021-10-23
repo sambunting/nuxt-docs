@@ -1,5 +1,5 @@
 <template>
-  <span class="inline-flex items-center px-3 py-1 leading-5 rounded-full text-base tracking-tight bg-gray-200 dark:bg-gray-800 text-primary-500">
+  <span class="inline-flex items-center py-1 px-3 text-base tracking-tight leading-5 bg-gray-200 rounded-full dark:bg-gray-800 text-primary-500">
     <slot />
   </span>
 </template>
