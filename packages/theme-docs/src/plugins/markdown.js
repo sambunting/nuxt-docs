@@ -1,7 +1,7 @@
-import marked from 'marked'
+import marked, { Renderer } from 'marked'
 
 export default function ({ app }, inject) {
-  const renderer = new marked.Renderer()
+  const renderer = new Renderer()
 
   renderer.link = function (href, title, text) {
     return title ? '<a target="_blank" href="' + href + '" title="' + title + '">' + text + '</a>' : '<a target="_blank" href="' + href + '">' + text + '</a>'

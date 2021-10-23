@@ -1,12 +1,15 @@
 .dark .light-img {
   display: none;
 }
+
 .dark .dark-img {
   display: block;
 }
+
 .dark-img {
   display: none;
 }
+
 .light-img {
   display: block;
 }

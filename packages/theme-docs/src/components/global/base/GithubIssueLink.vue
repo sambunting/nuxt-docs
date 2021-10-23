@@ -34,7 +34,7 @@ export default defineComponent({
       type: String
     }
   },
-  setup(props) {
+  setup (props) {
     const { $axios } = useContext()
     const store = useStore()
 
@@ -47,7 +47,6 @@ export default defineComponent({
         try {
           res = await $axios.get('https://api.github.com/repos/' + settings.github + '/issues/' + props.issue)
         } catch (err) {
-          console.error(err)
           return
         }
 

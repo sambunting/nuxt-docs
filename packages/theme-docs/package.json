@@ -23,7 +23,7 @@
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint:class": "rustywind --write .",
-    "lint": "yarn run lint:js --fix && yarn run lint:style --fix && yarn run lint:class",
+    "lint": "yarn run lint:js --fix && yarn run lint:class",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
     "lint:staged": "lint-staged",
     "docs:toc": "markdown-toc README.md --bullets='-' -i"
