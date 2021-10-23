@@ -1,3 +1,9 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.2.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.2.0...@cenk1cenk2/nuxt-content-theme-docs@2.2.1) (2021-10-23)
+
+### Bug Fixes
+
+- update documentation components add more documentatino ([1fcc83a](https://github.com/cenk1cenk2/nuxt-docs/commit/1fcc83a05720a1349e800430ffcc4aeaa0c5b1a0))
+
 # @cenk1cenk2/nuxt-content-theme-docs [2.2.0](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.1.0...@cenk1cenk2/nuxt-content-theme-docs@2.2.0) (2021-09-12)
 
 ### Features
