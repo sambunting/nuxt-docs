@@ -50,7 +50,7 @@ export default defineComponent({
           return
         }
 
-        return res
+        return res.data
       },
       props.issue,
       props.issue
