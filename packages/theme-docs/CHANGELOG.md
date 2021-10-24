@@ -1,3 +1,9 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.2.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.2.1...@cenk1cenk2/nuxt-content-theme-docs@2.2.2) (2021-10-24)
+
+### Bug Fixes
+
+- returning data ([dd4a5f9](https://github.com/cenk1cenk2/nuxt-docs/commit/dd4a5f989c668bc664616d0bbb059481d31e5db1))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [2.2.1](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.2.0...@cenk1cenk2/nuxt-content-theme-docs@2.2.1) (2021-10-23)
 
 ### Bug Fixes
