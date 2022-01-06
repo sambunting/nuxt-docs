@@ -29,12 +29,12 @@
     "docs:toc": "markdown-toc README.md --bullets='-' -i"
   },
   "lint-staged": {
-    "./*.{ts,js,tsx,jsx,vue}": [
+    "*.{ts,js,tsx,jsx,vue}": [
       "prettier --loglevel warn --write",
       "eslint --fix",
       "rustywind --write"
     ],
-    "./*.{json,md}": [
+    "*.{json,md}": [
       "prettier --loglevel warn --write"
     ],
     "*.{css,vue}": [

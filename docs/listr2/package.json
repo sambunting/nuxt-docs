@@ -21,11 +21,11 @@
     "copy:dockerfile": "cp ../../Dockerfile ./"
   },
   "lint-staged": {
-    "./*.{ts,js,tsx,jsx,vue}": [
+    "*.{ts,js,tsx,jsx,vue}": [
       "prettier --loglevel warn --write",
       "eslint --fix"
     ],
-    "./*.{json,md}": [
+    "*.{json,md}": [
       "prettier --loglevel warn --write",
       "markdownlint **/*.md --ignore node_modules"
     ]
